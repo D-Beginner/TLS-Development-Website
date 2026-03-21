@@ -160,6 +160,42 @@
             gap: 24px;
         }
 
+        /* ── Nav Dropdown ── */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .nav-dropdown-trigger svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.3s ease; }
+        .nav-dropdown:hover .nav-dropdown-trigger svg { transform: rotate(180deg); }
+        .nav-dropdown-menu {
+            position: absolute; top: calc(100% + 16px); left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 260px; background: var(--color-surface);
+            border-radius: 16px; box-shadow: 0 16px 48px rgba(28,53,69,0.2);
+            padding: 12px; opacity: 0; visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 200;
+        }
+        .nav-dropdown-menu::before {
+            content: ''; position: absolute; top: -8px; left: 50%;
+            width: 16px; height: 16px; background: var(--color-surface);
+            border-radius: 3px; transform: translateX(-50%) rotate(45deg);
+        }
+        .nav-dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; }
+        .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .nav-dropdown-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 12px; transition: all 0.2s ease; text-decoration: none; }
+        .nav-dropdown-item:hover { background: var(--color-canvas); }
+        .nav-dropdown-item-icon {
+            width: 44px; height: 44px; border-radius: 10px;
+            background: var(--color-canvas); display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; overflow: hidden; transition: all 0.2s ease;
+        }
+        .nav-dropdown-item:hover .nav-dropdown-item-icon { background: rgba(201,148,62,0.1); }
+        .nav-dropdown-item-icon img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+        .nav-dropdown-item-text { display: flex; flex-direction: column; gap: 2px; }
+        .nav-dropdown-item-name { font-size: 0.9rem; font-weight: 600; color: var(--color-text-main); text-transform: none; letter-spacing: 0; }
+        .nav-dropdown-item-location { font-size: 0.75rem; color: var(--color-text-muted); text-transform: none; letter-spacing: 0; font-weight: 400; }
+        .nav-dropdown-divider { height: 1px; background: var(--color-border); margin: 8px 12px; }
+        .nav-dropdown-footer { display: block; text-align: center; padding: 10px 16px; font-size: 0.8rem; font-weight: 600; color: var(--color-gold); text-transform: none; letter-spacing: 0; border-radius: 10px; transition: all 0.2s ease; }
+        .nav-dropdown-footer:hover { background: rgba(201,148,62,0.08); }
+
         .lang-toggle {
             color: var(--color-surface);
             font-size: 0.85rem;
@@ -747,25 +783,6 @@
             color: var(--color-teal-dark);
         }
 
-        .cta-banner {
-            background: linear-gradient(135deg, #C9943E 0%, #D4A85C 50%, #A87830 100%);
-            color: var(--color-surface);
-            text-align: center;
-            padding: 80px 40px;
-            border-radius: var(--radius-card);
-        }
-
-        .cta-banner h2 {
-            font-size: 2.5rem;
-            color: var(--color-surface);
-            margin-bottom: 24px;
-        }
-
-        .cta-banner p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
-        }
 
         @media (max-width: 1024px) {
             .values-grid { grid-template-columns: repeat(2, 1fr); }
@@ -830,6 +847,16 @@
             width: 40px; height: 1px;
             background: rgba(255,255,255,0.15);
         }
+        .mobile-menu-projects { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 320px; }
+        .mobile-menu-section-label { color: rgba(255,255,255,0.4); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .mobile-menu-project-item {
+            display: flex; align-items: center; gap: 14px;
+            background: rgba(255,255,255,0.07); padding: 14px 20px;
+            border-radius: 14px; width: 100%;
+            border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s ease; text-decoration: none;
+        }
+        .mobile-menu-project-item:hover { background: rgba(201,148,62,0.15); border-color: rgba(201,148,62,0.3); }
+        .mobile-menu-project-item img { width: 36px; height: 36px; object-fit: contain; background: white; border-radius: 8px; padding: 3px; flex-shrink: 0; }
         .mobile-wa-btn {
             margin-top: 4px;
             width: 100%;
@@ -864,6 +891,7 @@
             .testimonials-grid { grid-template-columns: 1fr; }
             .hero-about-content h1 { font-size: 2.4rem; }
             .projects-stats { grid-template-columns: repeat(2, 1fr); }
+
         }
 
         @media (max-width: 480px) {
@@ -873,49 +901,8 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="logo">
-            <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="logo-img">
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About Us</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-actions">
-            <div class="lang-toggle">
-                <span class="active">EN</span>
-                <span>/</span>
-                <span>BM</span>
-            </div>
-            <a href="https://wa.me/60134315114" class="btn btn-whatsapp" target="_blank">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                WhatsApp Us
-            </a>
-        </div>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="about.html" class="active">About Us</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="index.html#projects">Projects</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="#contact">Contact</a>
-        <a href="https://wa.me/60134315114" class="mobile-wa-btn" target="_blank">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            WhatsApp Us
-        </a>
-    </div>
+    <!-- Navbar (injected by components.js) -->
+    <div id="tls-navbar"></div>
 
     <!-- Hero Section -->
     <section class="hero-about">
@@ -1184,146 +1171,14 @@
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="section">
-        <div class="container">
-            <div class="cta-banner">
-                <h2>Find Your Dream Home Today</h2>
-                <p>Speak to our sales team for a personalised consultation.</p>
-                <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20untuk%20bertanya%20tentang%20projek%20TLS%20Development" class="btn btn-outline-white" style="border-color: rgba(255,255,255,0.5); color: white;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.2-5.01 5.97-5.01 9.969 0 1.928.392 3.853 1.162 5.615l-1.239 4.526 4.753-1.247c1.644.905 3.522 1.382 5.355 1.382 5.531 0 10.038-4.42 10.038-9.864 0-2.441-.91-4.735-2.562-6.461a9.828 9.828 0 00-7.021-2.900zM12.034 2.43C6.743 2.43 2.5 6.632 2.5 11.972c0 2.913.874 5.631 2.508 7.978L2.039 23.41l8.875-2.328c2.26 1.23 4.817 1.933 7.52 1.933 5.291 0 9.534-4.202 9.534-9.542 0-2.552-.91-4.947-2.562-6.78a9.934 9.934 0 00-7.428-3.294z"/>
-                    </svg>
-                    WhatsApp Us
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Banner (injected by components.js) -->
+    <div id="tls-cta-banner"></div>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="footer-logo-img">
-                    <p>Rumah Idaman, Kualiti Terjamin.</p>
-                    <p style="font-size: 0.85rem;">One of the most established property developers in Kedah and Perlis, building quality homes since 1992.</p>
-                    <a href="https://www.facebook.com/tlsdevelopment" target="_blank" style="display: inline-block; margin-top: 16px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-teal)">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="TLS Development Website Template.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="TLS Development Website Template.html#projects">Our Projects</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Now Selling</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Pokok Sena (42 Units)</a></li>
-                        <li><a href="#">Lot 1171 Jejawi (32 Units)</a></li>
-                        <li><a href="#">Changloon Residences (39 Units)</a></li>
-                        <li><a href="#">Taman Rotan Indah (28 Units)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>Address</strong>
-                                No. A34, Tingkat Satu, Alor Setar, Kedah
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>WhatsApp</strong>
-                                <a href="https://wa.me/60134315114">+6013-431 5114</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>Office</strong>
-                                <a href="tel:+60477212111">+604-772 1211</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <path d="M22 6l-10 7L2 6" fill="none"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>Email</strong>
-                                <a href="mailto:tlsdevelopmentsb@gmail.com">tlsdevelopmentsb@gmail.com</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 TLS Development Sdn Bhd. All Rights Reserved.</span>
-            <span>Company No. 232807-P</span>
-        </div>
-    </footer>
+    <!-- Footer + WhatsApp FAB (injected by components.js) -->
+    <div id="tls-footer"></div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20untuk%20bertanya%20tentang%20projek%20TLS%20Development" class="fab-whatsapp" title="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.2-5.01 5.97-5.01 9.969 0 1.928.392 3.853 1.162 5.615l-1.239 4.526 4.753-1.247c1.644.905 3.522 1.382 5.355 1.382 5.531 0 10.038-4.42 10.038-9.864 0-2.441-.91-4.735-2.562-6.461a9.828 9.828 0 00-7.021-2.9zM12.034 2.43C6.743 2.43 2.5 6.632 2.5 11.972c0 2.913.874 5.631 2.508 7.978L2.039 23.41l8.875-2.328c2.26 1.23 4.817 1.933 7.52 1.933 5.291 0 9.534-4.202 9.534-9.542 0-2.552-.91-4.947-2.562-6.78a9.934 9.934 0 00-7.428-3.294z"/>
-        </svg>
-    </a>
-
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('navHamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-        // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
+    <!-- PAGE IDENTIFIER + SHARED COMPONENTS -->
+    <script>window.TLS_PAGE = 'about';</script>
+    <script src="components.js"></script>
 </body>
 </html>

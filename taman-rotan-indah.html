@@ -291,14 +291,7 @@
         .location-nearby li:last-child { border-bottom: none; }
         .location-nearby li svg { width: 18px; height: 18px; stroke: var(--color-gold); fill: none; stroke-width: 2; flex-shrink: 0; }
 
-        /* ===== CTA BANNER ===== */
-        .cta-section {
-            background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
-            padding: 80px 0; text-align: center;
-        }
-        .cta-section h2 { font-size: 2.5rem; color: white; margin-bottom: 16px; }
-        .cta-section p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 40px; }
-        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
 
         /* ===== FOOTER ===== */
         .footer { background: var(--color-canvas); padding: 80px 0 40px; }
@@ -391,11 +384,7 @@
             .footer-grid { grid-template-columns: 1fr; }
             .footer { padding: 60px 0 32px; }
 
-            .cta-section { padding: 60px 0; }
-            .cta-section h2 { font-size: 1.8rem; }
-            .cta-section p { font-size: 0.95rem; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .cta-buttons .btn { width: 100%; max-width: 300px; justify-content: center; }
+
 
             .fab-whatsapp { bottom: 24px; right: 20px; width: 56px; height: 56px; }
             .fab-whatsapp svg { width: 26px; height: 26px; }
@@ -487,71 +476,8 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <a href="TLS Development Website Template.html" class="logo">
-            <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="logo-img">
-        </a>
-        <div class="nav-links">
-            <a href="TLS Development Website Template.html">Home</a>
-            <a href="about.html">About Us</a>
-            <div class="nav-dropdown">
-                <a href="TLS Development Website Template.html#projects" class="nav-dropdown-trigger">
-                    Projects
-                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                </a>
-                <div class="nav-dropdown-menu">
-                    <a href="taman-rotan-indah.html" class="nav-dropdown-item">
-                        <div class="nav-dropdown-item-icon">
-                            <img src="LOGO/KUBANG ROTAN LOGO (NO BG).png" alt="Taman Rotan Indah">
-                        </div>
-                        <div class="nav-dropdown-item-text">
-                            <span class="nav-dropdown-item-name">Taman Rotan Indah</span>
-                            <span class="nav-dropdown-item-location">Alor Setar, Kedah</span>
-                        </div>
-                    </a>
-                    <div class="nav-dropdown-divider"></div>
-                    <a href="TLS Development Website Template.html#projects" class="nav-dropdown-footer">View All Projects →</a>
-                </div>
-            </div>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="nav-actions">
-            <div class="lang-toggle">
-                <span class="active">EN</span> / <span>BM</span>
-            </div>
-            <a href="https://wa.me/60134315114" class="btn btn-primary" target="_blank">
-                <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
-                WhatsApp Us
-            </a>
-        </div>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Home</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="about.html">About Us</a>
-        <div class="mobile-menu-divider"></div>
-        <div class="mobile-menu-projects">
-            <span class="mobile-menu-section-label">Projects</span>
-            <a href="taman-rotan-indah.html" class="mobile-menu-project-item">
-                <img src="LOGO/KUBANG ROTAN LOGO (NO BG).png" alt="Taman Rotan Indah">
-                <div>
-                    <div style="color: white; font-size: 0.95rem; font-weight: 600;">Taman Rotan Indah</div>
-                    <div style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">Alor Setar, Kedah</div>
-                </div>
-            </a>
-        </div>
-        <div class="mobile-menu-divider"></div>
-        <a href="#contact">Contact</a>
-        <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20Taman%20Rotan%20Indah" class="btn btn-whatsapp mobile-wa-btn" target="_blank">WhatsApp Us</a>
-    </div>
+    <!-- Navbar (injected by components.js) -->
+    <div id="tls-navbar"></div>
 
     <!-- HERO SECTION -->
     <section class="project-hero">
@@ -894,135 +820,14 @@
     </section>
 
     <!-- CTA BANNER -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Interested in Taman Rotan Indah?</h2>
-            <p>Limited units available. Contact us today to secure your dream home.</p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20Taman%20Rotan%20Indah.%20Boleh%20saya%20tahu%20lebih%20lanjut?" class="btn btn-whatsapp" target="_blank">
-                    <svg class="icon-sm" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
-                    WhatsApp Us Now
-                </a>
-                <a href="tel:+60134315114" class="btn" style="background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3);">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Call +6013-431 5114
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Banner (injected by components.js) -->
+    <div id="tls-cta-banner"></div>
 
-    <!-- FOOTER -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div style="margin-bottom: 24px;">
-                        <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="footer-logo-img">
-                    </div>
-                    <p style="font-size: 0.9rem; margin-bottom: 24px;">Rumah Idaman, Kualiti Terjamin. One of the most established property developers in Kedah and Perlis, building quality homes since 1992.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-                        <li><a href="TLS Development Website Template.html" style="color: var(--color-text-muted); transition: color 0.2s;">Home</a></li>
-                        <li><a href="about.html" style="color: var(--color-text-muted); transition: color 0.2s;">About Us</a></li>
-                        <li><a href="TLS Development Website Template.html#projects" style="color: var(--color-text-muted); transition: color 0.2s;">Now Selling</a></li>
-                        <li><a href="#contact" style="color: var(--color-text-muted); transition: color 0.2s;">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Our Projects</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
-                        <li style="font-weight: 600; color: var(--color-text-main); margin-bottom: 4px;">Now Selling</li>
-                        <li><a href="#" style="color: var(--color-gold); font-weight: 500;">Taman Rotan Indah (28 Units)</a></li>
-                        <li style="font-weight: 600; color: var(--color-text-main); margin-top: 16px; margin-bottom: 4px;">Upcoming</li>
-                        <li><a href="TLS Development Website Template.html#projects" style="color: var(--color-text-muted);">Pokok Sena</a></li>
-                        <li><a href="TLS Development Website Template.html#projects" style="color: var(--color-text-muted);">Jejawi</a></li>
-                        <li><a href="TLS Development Website Template.html#projects" style="color: var(--color-text-muted);">Changloon</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="contact-list">
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>WhatsApp</strong>
-                                <a href="https://wa.me/60134315114" target="_blank" style="color: var(--color-teal); font-weight: 500;">+6013-431 5114</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>Office</strong>
-                                <a href="tel:+60472211211" style="color: var(--color-teal); font-weight: 500;">+604-772 1211</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            </div>
-                            <div class="contact-text">
-                                <strong>Email</strong>
-                                <a href="mailto:tlsdevelopmentsb@gmail.com" style="color: var(--color-teal); font-weight: 500;">tlsdevelopmentsb@gmail.com</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <p style="font-size: 0.8rem; color: rgba(92, 112, 128, 0.8); margin-top: 24px; line-height: 1.5;">No. A34, Tingkat Satu, Susuran Tandop, Kawasan Perusahaan Tandop Baru, 05400 Alor Setar, Kedah</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2026 TLS Development Sdn Bhd. All Rights Reserved. | Company No. 232807-P</span>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer + WhatsApp FAB (injected by components.js) -->
+    <div id="tls-footer"></div>
 
-    <!-- WhatsApp FAB -->
-    <a href="https://wa.me/60134315114" class="fab-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-    </a>
-
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 80) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Hamburger menu
-        const hamburger = document.getElementById('navHamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
+    <!-- PAGE IDENTIFIER + SHARED COMPONENTS -->
+    <script>window.TLS_PAGE = 'project';</script>
+    <script src="components.js"></script>
 </body>
 </html>

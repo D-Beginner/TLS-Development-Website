@@ -1225,7 +1225,9 @@
 
         /* CTA Banner */
         .cta-banner {
-            background: linear-gradient(135deg, #C9943E 0%, #D4A85C 50%, #A87830 100%);
+            background:
+                linear-gradient(135deg, rgba(168, 120, 48, 0.75) 0%, rgba(201, 148, 62, 0.65) 50%, rgba(140, 100, 30, 0.80) 100%),
+                url('https://img.craiyon.com/2026-03-21/T6Sh2aCKTpCmoZLH6LOaRw.webp') center/cover no-repeat;
             padding: 80px 0;
             text-align: center;
             margin: 80px 0;
@@ -1570,71 +1572,8 @@
         }
     </style>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar" vid="10">
-        <a href="#" class="logo" vid="11">
-            <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="logo-img" vid="12">
-        </a>
-        <div class="nav-links" vid="13">
-            <a href="#home" vid="14">Home</a>
-            <a href="about.html" vid="15">About Us</a>
-            <div class="nav-dropdown">
-                <a href="#projects" class="nav-dropdown-trigger" vid="16">
-                    Projects
-                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                </a>
-                <div class="nav-dropdown-menu">
-                    <a href="taman-rotan-indah.html" class="nav-dropdown-item">
-                        <div class="nav-dropdown-item-icon">
-                            <img src="LOGO/KUBANG ROTAN LOGO (NO BG).png" alt="Taman Rotan Indah">
-                        </div>
-                        <div class="nav-dropdown-item-text">
-                            <span class="nav-dropdown-item-name">Taman Rotan Indah</span>
-                            <span class="nav-dropdown-item-location">Alor Setar, Kedah</span>
-                        </div>
-                    </a>
-                    <div class="nav-dropdown-divider"></div>
-                    <a href="#projects" class="nav-dropdown-footer">View All Projects →</a>
-                </div>
-            </div>
-            <a href="#contact" vid="17">Contact</a>
-        </div>
-        <div class="nav-actions" vid="18">
-            <div class="lang-toggle" vid="19">
-                <span class="active" vid="20">EN</span> / <span vid="21">BM</span>
-            </div>
-            <a href="https://wa.me/60134315114" class="btn btn-primary" target="_blank" vid="22">
-                <svg class="icon-sm" viewBox="0 0 24 24" vid="23"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" vid="24"></path></svg>
-                WhatsApp Us
-            </a>
-        </div>
-        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#home">Home</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="about.html">About Us</a>
-        <div class="mobile-menu-divider"></div>
-        <div class="mobile-menu-projects">
-            <span class="mobile-menu-section-label">Projects</span>
-            <a href="taman-rotan-indah.html" class="mobile-menu-project-item">
-                <img src="LOGO/KUBANG ROTAN LOGO (NO BG).png" alt="Taman Rotan Indah">
-                <div>
-                    <div style="color: white; font-size: 0.95rem; font-weight: 600;">Taman Rotan Indah</div>
-                    <div style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">Alor Setar, Kedah</div>
-                </div>
-            </a>
-        </div>
-        <div class="mobile-menu-divider"></div>
-        <a href="#contact">Contact</a>
-        <a href="https://wa.me/60134315114" class="btn btn-whatsapp mobile-wa-btn" target="_blank">WhatsApp Us</a>
-    </div>
+    <!-- Navbar (injected by components.js) -->
+    <div id="tls-navbar"></div>
 
     <section class="hero" id="home" vid="25">
         <video class="hero-video" autoplay muted loop playsinline vid="26">
@@ -1713,73 +1652,45 @@
                 <p vid="upcoming-subtitle">New projects in the pipeline — register your interest to be the first to know.</p>
             </div>
 
-            <div class="upcoming-projects-grid five-items" vid="upcoming-grid">
+            <div class="upcoming-projects-grid" vid="upcoming-grid">
                 <!-- Card 1: Pokok Sena -->
                 <div class="upcoming-project-card" vid="upcoming-card-1">
                     <img src="LOGO/logo-pokok-sena.svg" alt="Pokok Sena" vid="upcoming-img-1">
                     <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-1">Pending Approval</div>
+                        <div class="upcoming-project-badge" vid="upcoming-badge-1">Coming Soon</div>
                         <h4 vid="upcoming-title-1">Pokok Sena</h4>
                         <p vid="upcoming-desc-1">42 Units &nbsp;·&nbsp; Freehold<br>Terrace, Semi-D &amp; Bungalow<br>Bandar Pokok Sena, Kedah</p>
                     </div>
                     <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Pokok%20Sena" class="upcoming-project-link" target="_blank" vid="upcoming-link-1">📩 Register Interest</a>
                 </div>
 
-                <!-- Card 2: Lot 1171 Jejawi -->
+                <!-- Card 2: Taman Hijirah Jejawi -->
                 <div class="upcoming-project-card" vid="upcoming-card-2">
-                    <img src="LOGO/logo-jejawi.svg" alt="Jejawi" vid="upcoming-img-2">
+                    <img src="LOGO/logo-jejawi.svg" alt="Taman Hijirah Jejawi" vid="upcoming-img-2">
                     <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-2">Pending Approval</div>
-                        <h4 vid="upcoming-title-2">Lot 1171 Jejawi</h4>
+                        <div class="upcoming-project-badge" vid="upcoming-badge-2">Coming Soon</div>
+                        <h4 vid="upcoming-title-2">Taman Hijirah Jejawi</h4>
                         <p vid="upcoming-desc-2">32 Units &nbsp;·&nbsp; Freehold<br>Semi-D &amp; Terrace<br>Jejawi, Perlis</p>
                     </div>
-                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Jejawi" class="upcoming-project-link" target="_blank" vid="upcoming-link-2">📩 Register Interest</a>
+                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Taman%20Hijirah%20Jejawi" class="upcoming-project-link" target="_blank" vid="upcoming-link-2">📩 Register Interest</a>
                 </div>
 
                 <!-- Card 3: Taman Seramak Api III -->
                 <div class="upcoming-project-card" vid="upcoming-card-3">
                     <img src="LOGO/logo-seramak-api.svg" alt="Seramak Api" vid="upcoming-img-3">
                     <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-3">Pending Approval</div>
+                        <div class="upcoming-project-badge" vid="upcoming-badge-3">Coming Soon</div>
                         <h4 vid="upcoming-title-3">Taman Seramak Api III</h4>
                         <p vid="upcoming-desc-3">39 Units &nbsp;·&nbsp; Freehold<br>Bungalow &amp; Semi-D<br>Changloon, Kedah</p>
                     </div>
                     <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Changloon" class="upcoming-project-link" target="_blank" vid="upcoming-link-3">📩 Register Interest</a>
                 </div>
-
-                <!-- Card 4: Yayasan Mixed Development -->
-                <div class="upcoming-project-card" vid="upcoming-card-4">
-                    <div class="project-placeholder" vid="upcoming-placeholder-4">YMD</div>
-                    <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-4">Coming Soon</div>
-                        <h4 vid="upcoming-title-4">Yayasan Mixed Development</h4>
-                        <p vid="upcoming-desc-4">69 Units &nbsp;·&nbsp; Mixed Development<br>Est. GDV RM25M<br>Yayasan, Kedah</p>
-                    </div>
-                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-4">📩 Register Interest</a>
-                </div>
-
-                <!-- Card 5: Kuala Ketil Residences -->
-                <div class="upcoming-project-card" vid="upcoming-card-5">
-                    <div class="project-placeholder" vid="upcoming-placeholder-5">KKR</div>
-                    <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-5">Coming Soon</div>
-                        <h4 vid="upcoming-title-5">Kuala Ketil Residences</h4>
-                        <p vid="upcoming-desc-5">19 Units &nbsp;·&nbsp; Residential<br>Kuala Ketil, Kedah</p>
-                    </div>
-                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-5">📩 Register Interest</a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA BANNER -->
-    <section class="cta-banner" vid="cta-banner">
-        <div class="container" vid="cta-container">
-            <h2 vid="cta-title">Find Your Dream Home Today</h2>
-            <p vid="cta-subtitle">Speak to our sales team for a personalised consultation.</p>
-            <a href="https://wa.me/60134315114" class="btn btn-whatsapp" target="_blank" vid="cta-btn">WhatsApp Us</a>
-        </div>
-    </section>
+    <!-- CTA Banner (injected by components.js) -->
+    <div id="tls-cta-banner"></div>
 
     <!-- OLD CONTENT REMOVED -->
     <!-- HIDDEN START
@@ -2072,125 +1983,10 @@
 
     HIDDEN END -->
 
-    <footer class="footer" id="contact" vid="253">
-        <div class="container" vid="254">
-            <div class="footer-grid" vid="255">
-                <div class="footer-col" vid="256">
-                    <div style="margin-bottom: 24px;" vid="257">
-                        <img src="LOGO/TLS LOGO (NO BACKGROUND).png" alt="TLS Development" class="footer-logo-img" vid="258">
-                    </div>
-                    <p style="font-size: 0.9rem; margin-bottom: 24px;" vid="259">Rumah Idaman, Kualiti Terjamin. One of the most established property developers in Kedah and Perlis, building quality homes since 1992.</p>
-                    <a href="https://www.facebook.com/tlsdevelopment" target="_blank" class="btn btn-outline-white" style="color: var(--color-teal); border-color: var(--color-border); padding: 8px 16px; border-radius: 8px;" vid="260">
-                        <svg class="icon-sm" viewBox="0 0 24 24" vid="261"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" vid="262"></path></svg>
-                        Follow
-                    </a>
-                </div>
+    <!-- Footer + WhatsApp FAB (injected by components.js) -->
+    <div id="tls-footer"></div>
 
-                <div class="footer-col" vid="263">
-                    <h4 vid="264">Quick Links</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;" vid="265">
-                        <li vid="266"><a href="#home" style="color: var(--color-text-muted); transition: color 0.2s;" vid="267">Home</a></li>
-                        <li vid="268"><a href="about.html" style="color: var(--color-text-muted); transition: color 0.2s;" vid="269">About Us</a></li>
-                        <li vid="270"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="271">Now Selling</a></li>
-                        <li vid="272"><a href="#contact" style="color: var(--color-text-muted); transition: color 0.2s;" vid="273">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col" vid="274">
-                    <h4 vid="275">Our Projects</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;" vid="276">
-                        <li style="font-weight: 600; color: var(--color-text-main); margin-bottom: 4px;" vid="277">Now Selling</li>
-                        <li vid="278"><a href="taman-rotan-indah.html" style="color: var(--color-text-muted); transition: color 0.2s;" vid="279">Taman Rotan Indah (28 Units)</a></li>
-                        <li style="font-weight: 600; color: var(--color-text-main); margin-top: 16px; margin-bottom: 4px;" vid="280">Upcoming</li>
-                        <li vid="281"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="282">Pokok Sena</a></li>
-                        <li vid="283"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="284">Jejawi</a></li>
-                        <li vid="285"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="286">Changloon</a></li>
-                        <li vid="287"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="288">Yayasan</a></li>
-                        <li vid="289"><a href="#projects" style="color: var(--color-text-muted); transition: color 0.2s;" vid="290">Kuala Ketil</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col" vid="285">
-                    <h4 vid="286">Contact</h4>
-                    <ul class="contact-list" vid="287">
-                        <li vid="288">
-                            <div class="contact-icon" vid="289">
-                                <svg viewBox="0 0 24 24" stroke-width="2" vid="290"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" vid="291"></path></svg>
-                            </div>
-                            <div class="contact-text" vid="292">
-                                <strong vid="293">WhatsApp</strong>
-                                <a href="https://wa.me/60134315114" target="_blank" style="color: var(--color-teal); font-weight: 500;" vid="294">+6013-431 5114</a>
-                            </div>
-                        </li>
-                        <li vid="295">
-                            <div class="contact-icon" vid="296">
-                                <svg viewBox="0 0 24 24" stroke-width="2" vid="297"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" vid="298"></path></svg>
-                            </div>
-                            <div class="contact-text" vid="299">
-                                <strong vid="300">Office</strong>
-                                <a href="tel:+60472211211" style="color: var(--color-teal); font-weight: 500;" vid="301">+604-772 1211</a>
-                            </div>
-                        </li>
-                        <li vid="302">
-                            <div class="contact-icon" vid="303">
-                                <svg viewBox="0 0 24 24" stroke-width="2" vid="304"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" vid="305"></path></svg>
-                            </div>
-                            <div class="contact-text" vid="306">
-                                <strong vid="307">Mobile</strong>
-                                <a href="tel:+60122848211" style="color: var(--color-teal); font-weight: 500;" vid="308">+6012-284 8211</a>
-                            </div>
-                        </li>
-                        <li vid="309">
-                            <div class="contact-icon" vid="310">
-                                <svg viewBox="0 0 24 24" stroke-width="2" vid="311"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" vid="312"></path><polyline points="22,6 12,13 2,6" vid="313"></polyline></svg>
-                            </div>
-                            <div class="contact-text" vid="314">
-                                <strong vid="315">Email</strong>
-                                <a href="mailto:tlsdevelopmentsb@gmail.com" style="color: var(--color-teal); font-weight: 500; word-break: break-all;" vid="316">tlsdevelopmentsb@gmail.com</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <p style="font-size: 0.8rem; color: rgba(92, 112, 128, 0.8); margin-top: 24px; line-height: 1.5;" vid="317">No. A34, Tingkat Satu, Susuran Tandop, Kawasan Perusahaan Tandop Baru, 05400 Alor Setar, Kedah</p>
-                    <p style="font-size: 0.8rem; color: rgba(92, 112, 128, 0.8); margin-top: 12px;" vid="318">Mon-Fri 9AM-5:30PM, Sat 9AM-1PM</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom" vid="319">
-                <span vid="320">© 2026 TLS Development Sdn Bhd. All Rights Reserved. | Company No. 232807-P</span>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/60134315114" class="fab-whatsapp" target="_blank" aria-label="Chat on WhatsApp" vid="321">
-        <svg viewBox="0 0 24 24" vid="322"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" vid="323"></path></svg>
-    </a>
-
-    <script vid="324">
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Hamburger menu
-        const hamburger = document.getElementById('navHamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-    </script>
-
+    <!-- PAGE IDENTIFIER + SHARED COMPONENTS -->
+    <script>window.TLS_PAGE = 'home';</script>
+    <script src="components.js"></script>
 </body></html>
