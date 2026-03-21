@@ -1285,43 +1285,77 @@
                 height: 380px;
             }
 
-            /* Upcoming: full-width vertical list, no horizontal scroll */
+            /* Upcoming: full-width vertical list */
             .upcoming-projects-grid,
             .upcoming-projects-grid.five-items {
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
+                gap: 12px;
                 overflow-x: visible;
             }
 
+            /* Card: 2-column grid — logo left, content right */
             .upcoming-project-card {
-                width: 100%;
+                display: grid;
+                grid-template-columns: 64px 1fr;
+                column-gap: 14px;
+                align-items: start;
+                padding: 16px;
                 text-align: left;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 16px;
-                padding: 20px;
+                box-sizing: border-box;
             }
 
-            .upcoming-project-card img,
+            /* Logo: override inline style, span all rows, centered */
+            .upcoming-project-card > img {
+                grid-column: 1 !important;
+                grid-row: 1 / span 4;
+                width: 64px !important;
+                height: 64px !important;
+                min-width: 64px !important;
+                border-radius: 10px !important;
+                object-fit: contain !important;
+                padding: 8px !important;
+                margin-bottom: 0 !important;
+                align-self: center;
+            }
+
             .upcoming-project-card .project-placeholder {
-                width: 72px;
-                height: 72px;
-                min-width: 72px;
-                border-radius: 12px;
-                margin-bottom: 0;
-                font-size: 1.2rem;
+                grid-column: 1;
+                grid-row: 1 / span 4;
+                width: 64px !important;
+                height: 64px !important;
+                min-width: 64px !important;
+                font-size: 1rem;
+                margin-bottom: 0 !important;
+                border-radius: 10px;
+                align-self: center;
             }
 
             .upcoming-project-card h4 {
-                font-size: 1rem;
+                grid-column: 2;
+                font-size: 0.95rem;
                 margin-bottom: 4px;
             }
 
             .upcoming-project-card p {
+                grid-column: 2;
+                font-size: 0.8rem;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+
+            .upcoming-project-card .upcoming-project-badge {
+                grid-column: 2;
+                display: inline-block;
+                width: fit-content;
+                margin-bottom: 6px;
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+
+            .upcoming-project-card .upcoming-project-link {
+                grid-column: 2;
                 font-size: 0.82rem;
-                margin-bottom: 8px;
             }
 
             .cta-banner h2 {
