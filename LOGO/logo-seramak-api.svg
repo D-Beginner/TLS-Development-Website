@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="24" fill="#1C3545"/>
+  <!-- Fire/Api icon - minimalistic flame for "Seramak Api" -->
+  <g transform="translate(200,170)" stroke="none">
+    <!-- Outer flame -->
+    <path d="M0,-70 C-15,-40 -35,-10 -35,20 C-35,40 -20,55 0,55 C20,55 35,40 35,20 C35,-10 15,-40 0,-70Z" fill="none" stroke="#C9943E" stroke-width="2.5"/>
+    <!-- Inner flame -->
+    <path d="M0,-35 C-8,-20 -18,-5 -18,12 C-18,22 -10,30 0,30 C10,30 18,22 18,12 C18,-5 8,-20 0,-35Z" fill="#C9943E" opacity="0.35"/>
+    <!-- Spark dot -->
+    <circle cx="0" cy="8" r="5" fill="#C9943E" opacity="0.7"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="280" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="300" letter-spacing="5" fill="white">TAMAN</text>
+  <text x="200" y="312" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="28" font-weight="300" letter-spacing="4" fill="white">SERAMAK API</text>
+  <text x="200" y="340" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="300" letter-spacing="3" fill="#C9943E">III</text>
+  <line x1="130" y1="252" x2="270" y2="252" stroke="#C9943E" stroke-width="1" opacity="0.6"/>
+</svg>

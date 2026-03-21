@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Subtle texture pattern for land -->
+    <pattern id="landTexture" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#E8E4D8"/>
+      <circle cx="2" cy="2" r="0.5" fill="#DDD8C8" opacity="0.5"/>
+    </pattern>
+    <!-- Water pattern -->
+    <pattern id="waterPattern" patternUnits="userSpaceOnUse" width="20" height="8">
+      <rect width="20" height="8" fill="#8FBDD3"/>
+      <path d="M0 4 Q5 2, 10 4 T20 4" fill="none" stroke="#A3CBE0" stroke-width="0.8" opacity="0.6"/>
+    </pattern>
+    <!-- Drop shadow for pin -->
+    <filter id="pinShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <!-- Glow for pin -->
+    <filter id="pinGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Gradient for paddy fields -->
+    <linearGradient id="paddyGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B8C9A0"/>
+      <stop offset="100%" stop-color="#A8BD8E"/>
+    </linearGradient>
+    <linearGradient id="paddyGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2D1A8"/>
+      <stop offset="100%" stop-color="#AABF94"/>
+    </linearGradient>
+    <linearGradient id="paddyGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9BB080"/>
+      <stop offset="100%" stop-color="#B5C69D"/>
+    </linearGradient>
+    <!-- Road gradient -->
+    <linearGradient id="mainRoadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5D678"/>
+      <stop offset="100%" stop-color="#E8C55A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background - light earth tone -->
+  <rect width="800" height="600" fill="#E4DFD2"/>
+
+  <!-- Paddy fields - grid pattern like satellite view -->
+  <!-- Top left fields -->
+  <rect x="0" y="0" width="160" height="120" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="165" y="0" width="140" height="120" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="310" y="0" width="130" height="80" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="445" y="0" width="150" height="80" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="600" y="0" width="200" height="100" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+
+  <!-- Middle fields -->
+  <rect x="0" y="125" width="180" height="100" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="185" y="125" width="120" height="100" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="310" y="85" width="180" height="90" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="495" y="85" width="140" height="90" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="640" y="105" width="160" height="80" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+
+  <!-- Fields near river -->
+  <rect x="0" y="230" width="200" height="80" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="205" y="230" width="150" height="80" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+
+  <!-- Bottom fields -->
+  <rect x="0" y="420" width="170" height="90" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="175" y="420" width="140" height="90" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="320" y="440" width="160" height="80" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="0" y="515" width="200" height="85" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="205" y="515" width="180" height="85" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="390" y="525" width="150" height="75" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+
+  <!-- Right side fields -->
+  <rect x="550" y="400" width="120" height="100" fill="url(#paddyGrad2)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="675" y="380" width="125" height="120" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="550" y="505" width="120" height="95" fill="url(#paddyGrad1)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+  <rect x="675" y="505" width="125" height="95" fill="url(#paddyGrad3)" stroke="#C5D4AB" stroke-width="0.5" rx="2"/>
+
+  <!-- Field grid lines (subtle) -->
+  <g stroke="#C0C0A8" stroke-width="0.3" opacity="0.4">
+    <line x1="80" y1="0" x2="80" y2="120"/>
+    <line x1="0" y1="60" x2="160" y2="60"/>
+    <line x1="235" y1="0" x2="235" y2="120"/>
+    <line x1="165" y1="55" x2="305" y2="55"/>
+    <line x1="375" y1="0" x2="375" y2="80"/>
+    <line x1="520" y1="0" x2="520" y2="80"/>
+    <line x1="90" y1="125" x2="90" y2="225"/>
+    <line x1="0" y1="175" x2="180" y2="175"/>
+    <line x1="245" y1="125" x2="245" y2="225"/>
+    <line x1="400" y1="85" x2="400" y2="175"/>
+    <line x1="565" y1="85" x2="565" y2="175"/>
+  </g>
+
+  <!-- Kedah River - winding through middle -->
+  <path d="M0 320 Q100 300, 200 315 Q300 330, 400 325 Q500 318, 580 340 Q650 355, 720 345 Q760 340, 800 350"
+        fill="none" stroke="url(#waterPattern)" stroke-width="35" stroke-linecap="round" opacity="0.9"/>
+  <path d="M0 320 Q100 300, 200 315 Q300 330, 400 325 Q500 318, 580 340 Q650 355, 720 345 Q760 340, 800 350"
+        fill="none" stroke="#8FBDD3" stroke-width="32" stroke-linecap="round"/>
+  <!-- River highlight -->
+  <path d="M0 318 Q100 298, 200 313 Q300 328, 400 323 Q500 316, 580 338 Q650 353, 720 343 Q760 338, 800 348"
+        fill="none" stroke="#A8D4E8" stroke-width="8" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- River label -->
+  <text x="180" y="355" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4A7A8C" font-style="italic" opacity="0.8">Kedah River</text>
+
+  <!-- Main road K141 - horizontal through upper area -->
+  <path d="M0 195 Q200 180, 400 190 Q600 198, 800 185" fill="none" stroke="#E8C55A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M0 195 Q200 180, 400 190 Q600 198, 800 185" fill="none" stroke="#F0D470" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Road label K141 -->
+  <g transform="translate(620, 178)">
+    <rect x="-20" y="-12" width="40" height="18" rx="3" fill="#F5D678" stroke="#C9A832" stroke-width="1"/>
+    <text x="0" y="2" font-family="Inter, Arial, sans-serif" font-size="10" fill="#5A4A10" text-anchor="middle" font-weight="600">K141</text>
+  </g>
+
+  <!-- Secondary road - vertical -->
+  <path d="M500 0 Q495 100, 500 200 Q505 250, 500 300 Q495 400, 500 500 Q502 550, 500 600"
+        fill="none" stroke="#D9D0B8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M500 0 Q495 100, 500 200 Q505 250, 500 300 Q495 400, 500 500 Q502 550, 500 600"
+        fill="none" stroke="#E8DFC8" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Smaller roads / paths -->
+  <path d="M300 0 L310 180" fill="none" stroke="#D0C8B0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0 400 Q200 395, 400 405 Q500 410, 550 400" fill="none" stroke="#D0C8B0" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Small village cluster (Kampung Kubang Rotan) - bottom left -->
+  <g opacity="0.7">
+    <rect x="40" y="440" width="12" height="10" fill="#D4A085" rx="1" transform="rotate(5, 46, 445)"/>
+    <rect x="60" y="435" width="14" height="12" fill="#C89575" rx="1" transform="rotate(-3, 67, 441)"/>
+    <rect x="85" y="442" width="10" height="10" fill="#D4A085" rx="1"/>
+    <rect x="55" y="455" width="11" height="9" fill="#C89575" rx="1" transform="rotate(8, 60, 460)"/>
+    <rect x="100" y="450" width="13" height="11" fill="#D4A085" rx="1"/>
+    <rect x="75" y="462" width="10" height="8" fill="#C89575" rx="1"/>
+  </g>
+
+  <!-- Village label -->
+  <text x="40" y="488" font-family="Inter, Arial, sans-serif" font-size="10" fill="#6B5B4A" font-weight="500" opacity="0.8">Kg. Kubang Rotan</text>
+
+  <!-- Small cluster near river (Kampung Kualasungai) -->
+  <g opacity="0.7">
+    <rect x="420" y="270" width="11" height="9" fill="#D4A085" rx="1"/>
+    <rect x="435" y="265" width="13" height="11" fill="#C89575" rx="1"/>
+    <rect x="452" y="272" width="10" height="8" fill="#D4A085" rx="1"/>
+    <rect x="430" y="282" width="12" height="10" fill="#C89575" rx="1"/>
+  </g>
+  <text x="415" y="260" font-family="Inter, Arial, sans-serif" font-size="9" fill="#6B5B4A" font-weight="500" opacity="0.7">Kg. Kualasungai</text>
+
+  <!-- Right side settlement -->
+  <g opacity="0.6">
+    <rect x="650" y="210" width="10" height="8" fill="#D4A085" rx="1"/>
+    <rect x="665" y="205" width="12" height="10" fill="#C89575" rx="1"/>
+    <rect x="680" y="212" width="11" height="9" fill="#D4A085" rx="1"/>
+    <rect x="700" y="208" width="10" height="8" fill="#C89575" rx="1"/>
+    <rect x="655" y="222" width="13" height="10" fill="#D4A085" rx="1"/>
+    <rect x="675" y="225" width="10" height="8" fill="#C89575" rx="1"/>
+    <rect x="695" y="220" width="12" height="10" fill="#D4A085" rx="1"/>
+  </g>
+
+  <!-- Vegetation/tree clusters -->
+  <g fill="#7BA068" opacity="0.5">
+    <circle cx="150" cy="300" r="8"/>
+    <circle cx="165" cy="295" r="6"/>
+    <circle cx="145" cy="310" r="7"/>
+    <circle cx="600" cy="290" r="9"/>
+    <circle cx="615" cy="285" r="7"/>
+    <circle cx="590" cy="298" r="6"/>
+    <circle cx="350" cy="450" r="8"/>
+    <circle cx="365" cy="445" r="6"/>
+    <circle cx="340" cy="460" r="7"/>
+  </g>
+
+  <!-- ===== PROJECT LOCATION PIN ===== -->
+  <!-- Pulsing ring animation -->
+  <circle cx="280" cy="290" r="20" fill="none" stroke="#C9943E" stroke-width="2" opacity="0.3">
+    <animate attributeName="r" values="20;35;20" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="290" r="15" fill="none" stroke="#C9943E" stroke-width="1.5" opacity="0.2">
+    <animate attributeName="r" values="15;28;15" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+
+  <!-- Pin shadow -->
+  <ellipse cx="280" cy="298" rx="12" ry="4" fill="#000" opacity="0.15"/>
+
+  <!-- Location pin -->
+  <g filter="url(#pinShadow)" transform="translate(280, 268)">
+    <!-- Pin body -->
+    <path d="M0 -28 C-15 -28, -22 -16, -22 -6 C-22 8, 0 28, 0 28 C0 28, 22 8, 22 -6 C22 -16, 15 -28, 0 -28Z"
+          fill="#C9943E"/>
+    <!-- Pin inner highlight -->
+    <path d="M0 -24 C-11 -24, -17 -14, -17 -6 C-17 4, 0 22, 0 22 C0 22, 17 4, 17 -6 C17 -14, 11 -24, 0 -24Z"
+          fill="#D4A85C"/>
+    <!-- Pin center dot -->
+    <circle cx="0" cy="-8" r="8" fill="white"/>
+    <!-- TLS text in pin -->
+    <text x="0" y="-5" font-family="Inter, Arial, sans-serif" font-size="7" fill="#C9943E" text-anchor="middle" font-weight="700">TLS</text>
+  </g>
+
+  <!-- Project label -->
+  <g transform="translate(280, 222)">
+    <rect x="-70" y="-14" width="140" height="28" rx="14" fill="#1C3545" opacity="0.9"/>
+    <text x="0" y="3" font-family="Inter, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="600">Taman Rotan Indah</text>
+  </g>
+
+  <!-- Location subtitle -->
+  <text x="280" y="320" font-family="Inter, Arial, sans-serif" font-size="9" fill="#1C3545" text-anchor="middle" font-weight="500" opacity="0.7">Lot 1205, Kubang Rotan</text>
+
+  <!-- Compass rose - top right -->
+  <g transform="translate(740, 50)">
+    <circle cx="0" cy="0" r="22" fill="white" opacity="0.85" stroke="#C9943E" stroke-width="1"/>
+    <polygon points="0,-16 -4,-4 0,-6 4,-4" fill="#C9943E"/>
+    <polygon points="0,16 -4,4 0,6 4,4" fill="#8A8A8A"/>
+    <polygon points="-16,0 -4,-4 -6,0 -4,4" fill="#8A8A8A"/>
+    <polygon points="16,0 4,-4 6,0 4,4" fill="#8A8A8A"/>
+    <text x="0" y="-24" font-family="Inter, Arial, sans-serif" font-size="9" fill="#C9943E" text-anchor="middle" font-weight="700">N</text>
+  </g>
+
+  <!-- Scale bar - bottom right -->
+  <g transform="translate(620, 570)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#1C3545" stroke-width="2"/>
+    <line x1="0" y1="-4" x2="0" y2="4" stroke="#1C3545" stroke-width="2"/>
+    <line x1="100" y1="-4" x2="100" y2="4" stroke="#1C3545" stroke-width="2"/>
+    <line x1="50" y1="-3" x2="50" y2="3" stroke="#1C3545" stroke-width="1"/>
+    <text x="50" y="-8" font-family="Inter, Arial, sans-serif" font-size="9" fill="#1C3545" text-anchor="middle">~ 1 km</text>
+  </g>
+
+  <!-- Map border -->
+  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#C9943E" stroke-width="2" rx="16" opacity="0.3"/>
+</svg>
