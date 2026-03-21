@@ -1110,71 +1110,107 @@
 
         .upcoming-project-card {
             background: var(--color-surface);
-            border-radius: 16px;
+            border-radius: 20px;
             border: 2px solid var(--color-gold);
-            padding: 32px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(28, 53, 69, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(28, 53, 69, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .upcoming-project-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 24px rgba(28, 53, 69, 0.12);
+            box-shadow: 0 16px 40px rgba(201, 148, 62, 0.2);
+            border-color: var(--color-gold-dark);
+        }
+
+        /* Logo area — full width, contained, light bg */
+        .upcoming-project-card > img {
+            width: 100% !important;
+            height: 160px !important;
+            object-fit: contain !important;
+            background: var(--color-canvas) !important;
+            padding: 28px !important;
+            border-radius: 0 !important;
+            margin-bottom: 0 !important;
+            border-bottom: 1px solid var(--color-border);
+            display: block;
         }
 
         .project-placeholder {
             width: 100%;
-            height: 180px;
-            background: #2D4F5E;
-            border-radius: 12px;
+            height: 160px;
+            background: var(--color-teal);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-display);
-            font-size: 3rem;
+            font-size: 2.2rem;
             color: var(--color-gold);
-            font-weight: 600;
-            margin-bottom: 24px;
+            font-weight: 700;
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* Card body */
+        .upcoming-card-body {
+            padding: 20px 20px 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .upcoming-project-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--color-teal-dark);
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
 
         .upcoming-project-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--color-text-muted);
-            margin-bottom: 16px;
-            line-height: 1.6;
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
 
         .upcoming-project-badge {
             display: inline-block;
             background: #FFF3E0;
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 999px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--color-gold);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 16px;
+            border: 1px solid rgba(201,148,62,0.3);
         }
 
+        /* Register Interest — WhatsApp button style */
         .upcoming-project-link {
-            display: inline-block;
-            color: var(--color-gold);
+            display: block;
+            background: #25D366;
+            color: white !important;
             font-weight: 600;
             font-size: 0.9rem;
             text-decoration: none;
-            transition: color 0.3s;
+            padding: 13px 20px;
+            margin: auto 20px 20px;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
         .upcoming-project-link:hover {
-            color: var(--color-gold-dark);
+            background: #1EBE5C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            color: white !important;
         }
 
         /* Grid for 5 items - 3 top, 2 bottom centered */
@@ -1294,68 +1330,42 @@
                 overflow-x: visible;
             }
 
-            /* Card: 2-column grid — logo left, content right */
+            /* Card: clean flex column, same as desktop but full width */
             .upcoming-project-card {
-                display: grid;
-                grid-template-columns: 64px 1fr;
-                column-gap: 14px;
-                align-items: start;
-                padding: 16px;
-                text-align: left;
-                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 0;
             }
 
-            /* Logo: override inline style, span all rows, centered */
             .upcoming-project-card > img {
-                grid-column: 1 !important;
-                grid-row: 1 / span 4;
-                width: 64px !important;
-                height: 64px !important;
-                min-width: 64px !important;
-                border-radius: 10px !important;
-                object-fit: contain !important;
-                padding: 8px !important;
-                margin-bottom: 0 !important;
-                align-self: center;
+                height: 130px !important;
+                padding: 20px !important;
             }
 
             .upcoming-project-card .project-placeholder {
-                grid-column: 1;
-                grid-row: 1 / span 4;
-                width: 64px !important;
-                height: 64px !important;
-                min-width: 64px !important;
-                font-size: 1rem;
-                margin-bottom: 0 !important;
-                border-radius: 10px;
-                align-self: center;
+                height: 130px !important;
+                font-size: 1.6rem;
+            }
+
+            .upcoming-card-body {
+                padding: 16px 16px 0;
             }
 
             .upcoming-project-card h4 {
-                grid-column: 2;
-                font-size: 0.95rem;
-                margin-bottom: 4px;
+                font-size: 1rem;
+                margin-bottom: 6px;
             }
 
             .upcoming-project-card p {
-                grid-column: 2;
-                font-size: 0.8rem;
-                margin-bottom: 6px;
-                line-height: 1.4;
-            }
-
-            .upcoming-project-card .upcoming-project-badge {
-                grid-column: 2;
-                display: inline-block;
-                width: fit-content;
-                margin-bottom: 6px;
-                font-size: 0.7rem;
-                padding: 4px 10px;
-            }
-
-            .upcoming-project-card .upcoming-project-link {
-                grid-column: 2;
                 font-size: 0.82rem;
+                margin-bottom: 10px;
+            }
+
+            .upcoming-project-link {
+                margin: 0 16px 16px;
+                padding: 11px 16px;
+                font-size: 0.85rem;
             }
 
             .cta-banner h2 {
@@ -1706,47 +1716,57 @@
             <div class="upcoming-projects-grid five-items" vid="upcoming-grid">
                 <!-- Card 1: Pokok Sena -->
                 <div class="upcoming-project-card" vid="upcoming-card-1">
-                    <img src="LOGO/logo-pokok-sena.svg" alt="Pokok Sena" style="width: 100%; height: 180px; border-radius: 12px; object-fit: contain; background: #f5f6f8; padding: 16px; margin-bottom: 24px;" vid="upcoming-img-1">
-                    <h4 vid="upcoming-title-1">Pokok Sena</h4>
-                    <p vid="upcoming-desc-1">42 Units | Freehold | Terrace, Semi-D, Bungalow<br>Bandar Pokok Sena, Kedah</p>
-                    <div class="upcoming-project-badge" vid="upcoming-badge-1">Pending Approval</div>
-                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Pokok%20Sena" class="upcoming-project-link" target="_blank" vid="upcoming-link-1">Register Interest</a>
+                    <img src="LOGO/logo-pokok-sena.svg" alt="Pokok Sena" vid="upcoming-img-1">
+                    <div class="upcoming-card-body">
+                        <div class="upcoming-project-badge" vid="upcoming-badge-1">Pending Approval</div>
+                        <h4 vid="upcoming-title-1">Pokok Sena</h4>
+                        <p vid="upcoming-desc-1">42 Units &nbsp;·&nbsp; Freehold<br>Terrace, Semi-D &amp; Bungalow<br>Bandar Pokok Sena, Kedah</p>
+                    </div>
+                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Pokok%20Sena" class="upcoming-project-link" target="_blank" vid="upcoming-link-1">📩 Register Interest</a>
                 </div>
 
                 <!-- Card 2: Lot 1171 Jejawi -->
                 <div class="upcoming-project-card" vid="upcoming-card-2">
-                    <img src="LOGO/logo-jejawi.svg" alt="Jejawi" style="width: 100%; height: 180px; border-radius: 12px; object-fit: contain; background: #f5f6f8; padding: 16px; margin-bottom: 24px;" vid="upcoming-img-2">
-                    <h4 vid="upcoming-title-2">Lot 1171 Jejawi</h4>
-                    <p vid="upcoming-desc-2">32 Units | Freehold | Semi-D & Terrace<br>Jejawi, Perlis</p>
-                    <div class="upcoming-project-badge" vid="upcoming-badge-2">Pending Approval</div>
-                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Jejawi" class="upcoming-project-link" target="_blank" vid="upcoming-link-2">Register Interest</a>
+                    <img src="LOGO/logo-jejawi.svg" alt="Jejawi" vid="upcoming-img-2">
+                    <div class="upcoming-card-body">
+                        <div class="upcoming-project-badge" vid="upcoming-badge-2">Pending Approval</div>
+                        <h4 vid="upcoming-title-2">Lot 1171 Jejawi</h4>
+                        <p vid="upcoming-desc-2">32 Units &nbsp;·&nbsp; Freehold<br>Semi-D &amp; Terrace<br>Jejawi, Perlis</p>
+                    </div>
+                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Jejawi" class="upcoming-project-link" target="_blank" vid="upcoming-link-2">📩 Register Interest</a>
                 </div>
 
                 <!-- Card 3: Taman Seramak Api III -->
                 <div class="upcoming-project-card" vid="upcoming-card-3">
-                    <img src="LOGO/logo-seramak-api.svg" alt="Seramak Api" style="width: 100%; height: 180px; border-radius: 12px; object-fit: contain; background: #f5f6f8; padding: 16px; margin-bottom: 24px;" vid="upcoming-img-3">
-                    <h4 vid="upcoming-title-3">Taman Seramak Api III</h4>
-                    <p vid="upcoming-desc-3">39 Units | Freehold | Bungalow & Semi-D<br>Changloon, Kedah</p>
-                    <div class="upcoming-project-badge" vid="upcoming-badge-3">Pending Approval</div>
-                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Changloon" class="upcoming-project-link" target="_blank" vid="upcoming-link-3">Register Interest</a>
+                    <img src="LOGO/logo-seramak-api.svg" alt="Seramak Api" vid="upcoming-img-3">
+                    <div class="upcoming-card-body">
+                        <div class="upcoming-project-badge" vid="upcoming-badge-3">Pending Approval</div>
+                        <h4 vid="upcoming-title-3">Taman Seramak Api III</h4>
+                        <p vid="upcoming-desc-3">39 Units &nbsp;·&nbsp; Freehold<br>Bungalow &amp; Semi-D<br>Changloon, Kedah</p>
+                    </div>
+                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Changloon" class="upcoming-project-link" target="_blank" vid="upcoming-link-3">📩 Register Interest</a>
                 </div>
 
                 <!-- Card 4: Yayasan Mixed Development -->
                 <div class="upcoming-project-card" vid="upcoming-card-4">
                     <div class="project-placeholder" vid="upcoming-placeholder-4">YMD</div>
-                    <h4 vid="upcoming-title-4">Yayasan Mixed Development</h4>
-                    <p vid="upcoming-desc-4">69 Units | Mixed Development | Est. GDV RM25M<br>Yayasan, Kedah</p>
-                    <div class="upcoming-project-badge" vid="upcoming-badge-4">Coming Soon</div>
-                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-4">Register Interest</a>
+                    <div class="upcoming-card-body">
+                        <div class="upcoming-project-badge" vid="upcoming-badge-4">Coming Soon</div>
+                        <h4 vid="upcoming-title-4">Yayasan Mixed Development</h4>
+                        <p vid="upcoming-desc-4">69 Units &nbsp;·&nbsp; Mixed Development<br>Est. GDV RM25M<br>Yayasan, Kedah</p>
+                    </div>
+                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-4">📩 Register Interest</a>
                 </div>
 
                 <!-- Card 5: Kuala Ketil Residences -->
                 <div class="upcoming-project-card" vid="upcoming-card-5">
                     <div class="project-placeholder" vid="upcoming-placeholder-5">KKR</div>
-                    <h4 vid="upcoming-title-5">Kuala Ketil Residences</h4>
-                    <p vid="upcoming-desc-5">19 Units | Residential<br>Kuala Ketil, Kedah</p>
-                    <div class="upcoming-project-badge" vid="upcoming-badge-5">Coming Soon</div>
-                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-5">Register Interest</a>
+                    <div class="upcoming-card-body">
+                        <div class="upcoming-project-badge" vid="upcoming-badge-5">Coming Soon</div>
+                        <h4 vid="upcoming-title-5">Kuala Ketil Residences</h4>
+                        <p vid="upcoming-desc-5">19 Units &nbsp;·&nbsp; Residential<br>Kuala Ketil, Kedah</p>
+                    </div>
+                    <a href="https://wa.me/60134315114" class="upcoming-project-link" target="_blank" vid="upcoming-link-5">📩 Register Interest</a>
                 </div>
             </div>
         </div>
