@@ -161,7 +161,7 @@
             <div style="margin-bottom:24px;">
               <img src="${CFG.logoMain}" alt="TLS Development" class="footer-logo-img">
             </div>
-            <p style="font-size:0.9rem;margin-bottom:24px;">Rumah Idaman, Kualiti Terjamin. One of the most established property developers in Kedah and Perlis, building quality homes since 1992.</p>
+            <p style="font-size:0.9rem;margin-bottom:24px;">Comfortable Living, Made Simple. One of the most established property developers in Kedah and Perlis, building quality homes since 1992.</p>
             <a href="${CFG.facebook}" target="_blank" class="btn btn-outline-white" style="color:var(--color-teal);border-color:var(--color-border);padding:8px 16px;border-radius:8px;">
               ${SVG.facebook} Follow
             </a>

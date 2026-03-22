@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Taman Pokok Sena — Kediaman Freehold di Bandar Pokok Sena</title>
+    <meta itemprop="name" content="Taman Pokok Sena" />
+    <meta itemprop="description"
+        content="Kediaman freehold yang menggabungkan kemodenan seni bina dengan ketenangan landskap desa. 42 unit kediaman di Bandar Pokok Sena, Kedah." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Taman Pokok Sena" />
+    <meta name="twitter:description"
+        content="Kediaman freehold yang menggabungkan kemodenan seni bina dengan ketenangan landskap desa. 42 unit kediaman di Bandar Pokok Sena, Kedah." />
+    <meta property="og:locale" content="ms_MY" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Taman Pokok Sena" />
+    <meta property="og:site_name" content="Taman Pokok Sena" />
+    <meta property="og:description"
+        content="Kediaman freehold yang menggabungkan kemodenan seni bina dengan ketenangan landskap desa. 42 unit kediaman di Bandar Pokok Sena, Kedah." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="TLS Development Sdn Bhd" />
+    <meta name="copyright" content="TLS Development Sdn Bhd" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a2e1a',
+                        secondary: '#1B5E3B',
+                        tertiary: '#14432A',
+                        ci: '#22734A',
+                        grain: '#FAF8F5',
+                        accent: '#C9943E',
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Josefin Sans', 'sans-serif'],
+                    },
+                    fontSize: {
+                        '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+    </style>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --nav-height: 100px;
+            --color-leaf: #2E8B57;
+            --color-paddy: #90BE6D;
+            --color-earth: #8B7355;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            color: #1B5E3B;
+            background: #FAF8F5;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .font-serif { font-family: 'Cinzel', serif; }
+
+        /* z-above */
+        .z-above { z-index: 20; }
+
+        /* bg-texture-after — premium linen/paper grain */
+        .bg-texture-after { position: relative; }
+        .bg-texture-after::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='6' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.15'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+            background-size: 512px 512px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Apple Liquid Glass nav */
+        .liquid-glass {
+            background: rgba(27, 94, 59, 0.35);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+        .liquid-glass-sticky {
+            background: rgba(20, 67, 42, 0.45);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        /* full-split-screen grid */
+        .full-split-screen {
+            display: grid;
+            grid-template-columns:
+                minmax(1rem, 1fr)
+                repeat(4, minmax(0, calc(1280px / 4)))
+                minmax(1rem, 1fr);
+        }
+        @media (min-width: 768px) {
+            .full-split-screen {
+                grid-template-columns:
+                    minmax(2rem, 1fr)
+                    repeat(12, minmax(0, calc(1280px / 12)))
+                    minmax(2rem, 1fr);
+            }
+        }
+
+        /* btn-primary */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            border-radius: 0.375rem;
+        }
+        .btn-primary:not(.grain):not(.secondary):not(.outline) {
+            background-color: #FAF8F5;
+            color: #14432A;
+        }
+        .btn-primary:not(.grain):not(.secondary):not(.outline):hover {
+            background-color: #C9943E;
+            color: #FAF8F5;
+        }
+        .btn-primary.grain {
+            background-color: #FAF8F5;
+            color: #14432A;
+        }
+        .btn-primary.grain:hover {
+            background-color: #C9943E;
+            color: #FAF8F5;
+        }
+        .btn-primary.secondary {
+            background-color: #1B5E3B;
+            color: #FAF8F5;
+        }
+        .btn-primary.secondary:hover {
+            background-color: #14432A;
+            color: #FAF8F5;
+        }
+        .btn-primary.outline {
+            background-color: transparent;
+            color: #1B5E3B;
+            border: 2px solid #1B5E3B;
+        }
+        .btn-primary.outline:hover {
+            background-color: #1B5E3B;
+            color: #FAF8F5;
+        }
+        .btn-primary.accent-btn {
+            background-color: #C9943E;
+            color: #FAF8F5;
+        }
+        .btn-primary.accent-btn:hover {
+            background-color: #b07f2e;
+            color: #FAF8F5;
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Splash screen animation */
+        #splash {
+            animation: splashFadeOut 0.6s ease-in-out 3.5s forwards;
+        }
+        @keyframes splashFadeOut {
+            0% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+        }
+        .animate-fade-in-delay {
+            animation: fadeIn 1.5s ease-out 1.2s forwards;
+        }
+
+        /* Wave animated SVG for scroll */
+        .wave-scroll {
+            width: 60px;
+            height: auto;
+        }
+
+        /* Swiper custom */
+        swiper-container::part(pagination) {
+            position: relative;
+            bottom: 0;
+            margin-top: 1rem;
+        }
+        swiper-container::part(bullet) {
+            background: #1B5E3B;
+            opacity: 0.3;
+        }
+        swiper-container::part(bullet-active) {
+            background: #1B5E3B;
+            opacity: 1;
+        }
+
+        /* Placeholder images */
+        .img-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #22734A 0%, #1B5E3B 50%, #14432A 100%);
+            color: #FAF8F5;
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 2rem;
+            min-height: 200px;
+        }
+
+        /* Checkbox styling */
+        input[type="checkbox"]:checked {
+            background-color: #FAF8F5;
+            border-color: #FAF8F5;
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2314432A' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Responsive fluid text */
+        .fluid-text-3xl { font-size: clamp(1.875rem, 4vw, 2.75rem); }
+        .fluid-text-2xl { font-size: clamp(1.5rem, 3.5vw, 2.75rem); }
+
+        /* WhatsApp button */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background-color: #25D366;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Mobile menu */
+        .menu-opened { overflow: hidden; }
+        .menu-opened .mobile-menu { opacity: 1; visibility: visible; transform: scale(1); }
+        .menu-opened .hamburger-open { display: none; }
+        .menu-opened .hamburger-close { display: block; }
+
+        /* Sticky nav */
+        #sticky-nav.visible {
+            transform: translateY(0) !important;
+        }
+
+        /* Hero image aspect ratio */
+        .hero-image-wrapper {
+            aspect-ratio: 1.5 / 1;
+        }
+        @media (min-width: 768px) {
+            .hero-image-wrapper {
+                aspect-ratio: 2.2 / 1;
+            }
+        }
+
+        /* Pattern placeholder overlay */
+        .pattern-overlay {
+            background: linear-gradient(135deg, rgba(34,115,74,0.1) 0%, rgba(27,94,59,0.05) 100%);
+        }
+
+        /* Form input focus styling */
+        #registration-form input:focus {
+            border-color: #C9943E !important;
+            outline: none;
+        }
+
+        /* Nav link hover animation */
+        .nav-link-hover {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #FAF8F5;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Footer link hover underline */
+        .footer-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C9943E;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .footer-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Card hover */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- ===== MAIN NAV ===== -->
+    <nav id="main-nav" class="absolute top-0 left-0 z-above w-full py-4 md:py-6 liquid-glass">
+        <div class="container mx-auto px-4 md:px-8 flex items-center justify-between max-w-full">
+            <a class="flex items-center" href="#">
+                <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="Taman Pokok Sena" class="h-14 md:h-16 w-auto" />
+            </a>
+            <div class="justify-center hidden text-sm lg:flex gap-10 xl:gap-14 text-grain/50 font-sans tracking-wide">
+                <a class="nav-link-hover hover:text-white" href="#kediaman">Kediaman</a>
+                <a class="nav-link-hover hover:text-white" href="#kemudahan">Kemudahan</a>
+                <a class="nav-link-hover hover:text-white" href="#lokasi">Lokasi</a>
+                <a class="nav-link-hover hover:text-white" href="#galeri">Galeri</a>
+                <a class="nav-link-hover hover:text-white" href="#hubungi">Hubungi Kami</a>
+            </div>
+            <div class="flex justify-end items-center space-x-4">
+                <a class="hidden text-xs lg:inline-flex btn-primary grain whitespace-nowrap tracking-wide uppercase" href="#register">
+                    Daftar Sekarang
+                </a>
+                <!-- Mobile hamburger -->
+                <button class="block p-2 border rounded-full lg:hidden border-grain transition-all duration-300" aria-label="menu" onclick="document.body.classList.toggle('menu-opened')">
+                    <svg class="hamburger-open size-6" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2 6H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M2 10H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M2 14H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg>
+                    <svg class="hamburger-close hidden size-6" width="20" height="20" fill="none" stroke="#FAF8F5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== STICKY NAV ===== -->
+    <nav id="sticky-nav" class="fixed top-0 left-0 z-[90] w-full py-4 md:py-5 liquid-glass-sticky transition-all duration-300 -translate-y-full">
+        <div class="container mx-auto px-4 md:px-8 flex items-center justify-between max-w-full">
+            <a class="flex items-center" href="#">
+                <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="Taman Pokok Sena" class="h-8 md:h-10 w-auto" />
+            </a>
+            <div class="justify-center hidden text-sm lg:flex gap-10 xl:gap-14 text-grain/50 font-sans tracking-wide">
+                <a class="nav-link-hover hover:text-white" href="#kediaman">Kediaman</a>
+                <a class="nav-link-hover hover:text-white" href="#kemudahan">Kemudahan</a>
+                <a class="nav-link-hover hover:text-white" href="#lokasi">Lokasi</a>
+                <a class="nav-link-hover hover:text-white" href="#galeri">Galeri</a>
+                <a class="nav-link-hover hover:text-white" href="#hubungi">Hubungi Kami</a>
+            </div>
+            <div class="flex justify-end items-center space-x-4">
+                <a class="hidden text-xs lg:inline-flex btn-primary grain whitespace-nowrap tracking-wide uppercase" href="#register">
+                    Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU OVERLAY ===== -->
+    <div class="mobile-menu fixed inset-0 w-full h-full z-[80] bg-secondary flex items-center transition-all opacity-0 invisible scale-50 duration-300 pt-[100px]">
+        <div class="flex flex-col mx-auto mb-8 space-y-8 text-center text-white w-max font-sans">
+            <div class="flex flex-col items-center w-full space-y-8">
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#kediaman" onclick="document.body.classList.remove('menu-opened')">Kediaman</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#kemudahan" onclick="document.body.classList.remove('menu-opened')">Kemudahan</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#lokasi" onclick="document.body.classList.remove('menu-opened')">Lokasi</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#galeri" onclick="document.body.classList.remove('menu-opened')">Galeri</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#hubungi" onclick="document.body.classList.remove('menu-opened')">Hubungi Kami</a>
+            </div>
+            <a class="inline-flex px-8 py-4 text-sm tracking-wide uppercase transition-colors duration-300 bg-grain text-primary rounded-md" href="#register" onclick="document.body.classList.remove('menu-opened')">
+                Daftar Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CALL US SIDEBAR ===== -->
+    <a id="btn-call-us"
+        class="fixed bottom-0 right-0 z-20 flex justify-center items-center gap-8 px-4 md:px-14 py-[5px] md:py-5 text-base leading-none tracking-widest uppercase origin-bottom-right -rotate-90 -translate-y-[250px] md:-translate-y-[340px] bg-grain text-primary w-[250px] md:w-[340px] hover:bg-accent hover:text-grain transition-all duration-300"
+        href="tel:+60134315114">
+        <span class="font-sans">Hubungi Kami</span>
+        <svg class="rotate-90 size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="btn-back-to-top"
+        class="size-[30px] md:size-[60px] fixed bottom-[250px] md:bottom-[340px] right-0 z-20 bg-ci hover:bg-tertiary transition-all duration-300 flex justify-center items-center"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg class="text-grain size-5 md:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- ===== SPLASH SCREEN ===== -->
+    <section id="splash" class="fixed top-0 left-0 z-[100] w-full h-screen bg-tertiary flex items-center justify-center">
+        <div class="flex flex-col items-center justify-center">
+            <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="Taman Pokok Sena" class="h-24 md:h-32 w-auto opacity-0 animate-fade-in">
+            <h2 class="text-grain font-serif text-2xl md:text-3xl tracking-[0.3em] uppercase mt-8 opacity-0 animate-fade-in-delay">Taman Pokok Sena</h2>
+        </div>
+    </section>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="h-full min-h-screen md:h-screen md:min-h-[700px] overflow-x-hidden bg-tertiary bg-texture-after pt-[100px] relative z-10">
+        <div class="h-full flex flex-col md:grid md:grid-cols-12 justify-center">
+            <!-- Video (behind, full right side) -->
+            <div class="relative flex items-end order-1 md:col-span-8 md:col-start-5 overflow-hidden md:order-2">
+                <div class="w-full hero-image-wrapper relative">
+                    <video autoplay muted loop playsinline class="object-cover w-full h-full">
+                        <source src="IMAGES/POKOK SENA 42UNIT/paddy-field-hero.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-r from-tertiary/60 to-transparent"></div>
+                </div>
+            </div>
+            <!-- Text overlay positioned at golden ratio (~38.2% from left) -->
+            <div class="absolute z-20 flex flex-col justify-center inset-0 pt-[100px] px-8 md:px-0" style="padding-left: max(2rem, 8vw);">
+                <h2 class="font-serif font-bold text-4xl md:text-6xl lg:text-7xl text-grain uppercase leading-none tracking-wider drop-shadow-lg" style="max-width: 38.2vw;">
+                    Hijau. Lestari. Sejahtera.
+                </h2>
+                <a id="btn-scroll-explore" class="mt-12 md:mt-24 whitespace-nowrap transition-all duration-300" href="#intro">
+                    <span class="relative block text-sm font-sans tracking-wide uppercase text-grain drop-shadow-md">Terokai Lagi</span>
+                    <svg class="mt-6 wave-scroll" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30" fill="none">
+                        <path d="M0 15c20-10 40 10 60 0s40 10 60 0" stroke="#FAF8F5" stroke-width="2" fill="none">
+                            <animate attributeName="d" dur="2s" repeatCount="indefinite"
+                                values="M0 15c20-10 40 10 60 0s40 10 60 0;M0 15c20 10 40-10 60 0s40-10 60 0;M0 15c20-10 40 10 60 0s40 10 60 0"/>
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTRODUCTION SECTION ===== -->
+    <section id="intro" class="relative bg-grain">
+        <div class="py-16 lg:py-24 relative">
+            <div class="container max-w-3xl mx-auto space-y-12 text-balance px-6">
+                <div class="text-center">
+                    <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="Taman Pokok Sena" class="inline-block h-16 md:h-20 w-auto opacity-20" style="filter: brightness(0) saturate(100%) invert(27%) sepia(72%) saturate(600%) hue-rotate(110deg) brightness(90%) contrast(90%);">
+                </div>
+                <div class="space-y-8 text-center text-secondary">
+                    <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider font-bold">
+                        Kediaman Hijau untuk Masa Depan Anda
+                    </h2>
+                    <p class="text-base md:text-lg font-sans leading-relaxed">
+                        Diilhamkan oleh kehijauan sawah padi Pokok Sena, <strong>Taman Pokok Sena</strong> merupakan projek kediaman mesra alam yang pertama di kawasan ini. Setiap rumah dilengkapi dengan sistem solar bernilai RM17,000 secara PERCUMA, dibina menggunakan bahan binaan mesra alam, dan direka untuk keselesaan hidup yang lestari. 42 unit kediaman freehold oleh <strong>TLS Development</strong> — pembina berpengalaman lebih 30 tahun.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ECO FEATURE HIGHLIGHTS ===== -->
+    <div class="bg-ci/10 py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-ci">RM17,000</div>
+                    <div class="text-sm text-secondary mt-1">Sistem Solar PERCUMA</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-ci">100%</div>
+                    <div class="text-sm text-secondary mt-1">Freehold / Hak Milik Kekal</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-ci">42</div>
+                    <div class="text-sm text-secondary mt-1">Unit Eksklusif Sahaja</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-ci">30+</div>
+                    <div class="text-sm text-secondary mt-1">Tahun Pengalaman Pembina</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT SECTIONS ===== -->
+    <div class="py-16 space-y-16 lg:space-y-24 lg:py-24">
+
+        <!-- === LOCATION SECTION === -->
+        <section id="lokasi" class="space-y-16">
+            <div class="px-4 md:px-0">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <img loading="lazy" decoding="async" src="IMAGES/POKOK SENA 42UNIT/POKOK SENA ROADVIEW HERO BANENR.PNG" alt="Taman Pokok Sena - Pandangan Hadapan" class="w-full h-auto max-w-full rounded-lg">
+                        <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans bg-secondary/50 rounded">Tanggapan Artis Sahaja</small>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-start-1 col-end-13 md:col-end-8 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Lokasi Strategik di Tengah-tengah Bandar Pokok Sena
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                Terletak di Bandar Pokok Sena, dikelilingi oleh sawah padi yang menghijau dan udara segar kampung. <strong>Taman Pokok Sena</strong> menawarkan akses mudah ke Lebuhraya Utara-Selatan, sekolah, masjid, pasar, dan hospital. Lokasi yang strategik dengan persekitaran semula jadi yang tidak ternilai — jauh dari kesibukan bandar, dekat dengan segala kemudahan.
+                            </p>
+                            <a class="inline-flex text-xs btn-primary secondary whitespace-nowrap tracking-wide uppercase" href="#lokasi">
+                                Terokai Lokasi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === SECURITY / FREEHOLD SECTION === -->
+        <section id="kemudahan" class="space-y-6 md:space-y-16">
+            <div class="px-4 md:px-0">
+                <div class="container mx-auto">
+                    <div class="relative">
+                        <img loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-lg"
+                            src="IMAGES/POKOK SENA 42UNIT/entrance-view-cgi.png"
+                            alt="Imej CGI Taman Pokok Sena - Pandangan Pintu Masuk" />
+                        <small class="absolute bottom-0 right-0 p-2 md:p-4 font-medium text-grain font-sans">Tanggapan Artis Sahaja</small>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12 gap-8 items-center">
+                    <div class="col-start-1 col-end-13 md:col-start-1 md:col-end-4">
+                        <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-lg"
+                            src="IMAGES/POKOK SENA 42UNIT/SEMID D FRONT VIEW.png"
+                            alt="Semi-D Setingkat - Pandangan Hadapan" />
+                    </div>
+                    <div class="col-start-1 col-end-13 md:col-start-5 md:col-end-13 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Rumah Mesra Alam, Jimat Tenaga
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                Setiap unit di <strong>Taman Pokok Sena</strong> dilengkapi dengan sistem panel solar bernilai RM17,000 secara PERCUMA — menjimatkan bil elektrik anda sehingga 40% setiap bulan. Dibina menggunakan bahan binaan mesra alam dan reka bentuk pengudaraan silang semula jadi, rumah anda bukan sahaja selesa tetapi juga menyumbang kepada kelestarian alam sekitar.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mt-4 text-sm font-sans">
+                                <span class="inline-flex items-center gap-2 bg-ci/10 text-ci px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                    Bahan Binaan Mesra Alam
+                                </span>
+                                <span class="inline-flex items-center gap-2 bg-ci/10 text-ci px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                                    Sistem Solar RM17,000 PERCUMA
+                                </span>
+                                <span class="inline-flex items-center gap-2 bg-ci/10 text-ci px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    Freehold 100%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NATURE SECTION === -->
+        <section class="space-y-16">
+            <div class="px-4 md:px-0">
+                <div class="container mx-auto md:w-3/4 md:ml-auto">
+                    <div class="relative">
+                        <img loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-lg"
+                            src="IMAGES/POKOK SENA 42UNIT/garden-landscape-cgi.png"
+                            alt="Imej CGI Taman Pokok Sena - Taman & Landskap" />
+                        <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Tanggapan Artis Sahaja</small>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-start-1 col-end-13 md:col-end-8 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Kehidupan Hijau di Tengah Sawah Padi
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                Bayangkan bangun setiap pagi dengan pemandangan sawah padi yang menghijau. <strong>Taman Pokok Sena</strong> menawarkan persekitaran semula jadi yang sukar ditemui di pembangunan moden — udara segar, kehijauan alam, dan ketenangan kampung. Reka bentuk moden setingkat yang mengutamakan keharmonian dengan alam.
+                            </p>
+                            <a class="inline-flex text-xs btn-primary secondary whitespace-nowrap tracking-wide uppercase" href="#galeri">
+                                Terokai Taman Pokok Sena
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === WELLNESS SECTION === -->
+        <section class="space-y-16">
+            <div class="px-4 md:px-0">
+                <div class="container mx-auto md:w-3/4">
+                    <div class="relative">
+                        <img loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-lg"
+                            src="IMAGES/POKOK SENA 42UNIT/interior-living-cgi.png"
+                            alt="Imej CGI Taman Pokok Sena - Ruang Dalaman" />
+                        <small class="absolute bottom-0 right-0 p-2 md:p-4 font-medium text-grain font-sans">Tanggapan Artis Sahaja</small>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-start-1 col-end-13 md:col-start-7 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Komitmen Kami kepada Pembinaan Lestari
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <!-- GBI Badge -->
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-ci/10">
+                                <svg class="w-6 h-6 text-ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                    <path d="M12 22V12"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm font-sans font-bold text-ci uppercase tracking-wide">Pendekatan Green Building Index (GBI)</span>
+                        </div>
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                <strong>Taman Pokok Sena</strong> mengamalkan pendekatan Green Building Index (GBI) dalam pembinaannya. Daripada pemilihan bahan binaan mesra alam, sistem saliran air hujan, hingga panel solar untuk setiap unit — kami komited untuk membina kediaman yang bukan sahaja selesa tetapi juga bertanggungjawab terhadap alam sekitar. Pembinaan berkualiti oleh <strong>TLS Development</strong> dengan pengalaman lebih 30 tahun dan lebih 2,800 unit rumah yang telah dibina.
+                            </p>
+                            <a class="inline-flex text-xs btn-primary secondary whitespace-nowrap tracking-wide uppercase" href="#kediaman">
+                                Terokai Kediaman Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === PROPERTY TYPES SECTION (SWIPER) === -->
+        <section id="kediaman" class="space-y-16">
+            <div id="galeri" class="relative">
+                <div class="container mx-auto px-4 md:px-0">
+                    <swiper-container pagination="true" pagination-clickable="true"
+                        autoplay='{"delay": 5000, "disableOnInteraction": false}'
+                        speed="800" loop="true" slides-per-view="1">
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/TERRACE HOUSE EXTERIOR.jpeg"
+                                    alt="Teres Setingkat - Perspektif"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Teres Setingkat<br>22 Unit</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Teres Setingkat — 22 Unit | Termasuk Sistem Solar RM17,000</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/TERRACE HOOUSE FRONT VIEW.png"
+                                    alt="Teres Setingkat - Pandangan Hadapan"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Teres Setingkat<br>Pandangan Hadapan</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Teres Setingkat — Pandangan Hadapan | Panel Solar di Bumbung</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/SEMI D EXTERIOR.jpeg"
+                                    alt="Semi-D Setingkat - Perspektif"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Semi-D Setingkat<br>16 Unit</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Semi-D Setingkat — 16 Unit | Termasuk Sistem Solar RM17,000</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/SEMID D FRONT VIEW.png"
+                                    alt="Semi-D Setingkat - Pandangan Hadapan"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Semi-D Setingkat<br>Pandangan Hadapan</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Semi-D Setingkat — Pandangan Hadapan</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/BUNGALOW EXTERIOR.jpeg"
+                                    alt="Banglo Setingkat - Perspektif"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Banglo Setingkat<br>4 Unit</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Banglo Setingkat — 4 Unit | Termasuk Sistem Solar RM17,000</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/POKOK SENA 42UNIT/BUNGALOW FRONT VIEW.png"
+                                    alt="Banglo Setingkat - Pandangan Hadapan"
+                                    onerror="this.parentElement.innerHTML='<div class=\'img-placeholder aspect-video rounded-lg\'><span>Banglo Setingkat<br>Pandangan Hadapan</span></div>';" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans">Banglo Setingkat — Pandangan Hadapan | Reka Bentuk Moden</small>
+                            </div>
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-start-1 col-end-13 md:col-start-2 md:col-end-8 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Kediaman untuk Generasi Anda
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                Direka untuk kehidupan keluarga moden, <strong>Taman Pokok Sena</strong> menawarkan 42 unit kediaman freehold dengan susun atur praktikal dan ruang dalaman yang lapang. Setiap unit dilengkapi sistem solar bernilai RM17,000 secara PERCUMA.
+                            </p>
+                            <div class="grid grid-cols-3 gap-4 mt-8">
+                                <div class="text-center p-4 bg-secondary/5 rounded-lg card-hover">
+                                    <p class="font-serif text-2xl md:text-3xl font-bold text-ci">22</p>
+                                    <p class="text-sm font-sans mt-1 uppercase tracking-wide">Unit Teres</p>
+                                    <p class="text-xs font-sans mt-2 text-secondary/70">Reka bentuk moden dengan pengudaraan silang, bahan mesra alam, dan sistem solar percuma</p>
+                                </div>
+                                <div class="text-center p-4 bg-secondary/5 rounded-lg card-hover">
+                                    <p class="font-serif text-2xl md:text-3xl font-bold text-ci">16</p>
+                                    <p class="text-sm font-sans mt-1 uppercase tracking-wide">Unit Semi-D</p>
+                                    <p class="text-xs font-sans mt-2 text-secondary/70">Ruang lebih luas dengan taman persendirian, bahan mesra alam, dan sistem solar percuma</p>
+                                </div>
+                                <div class="text-center p-4 bg-secondary/5 rounded-lg card-hover">
+                                    <p class="font-serif text-2xl md:text-3xl font-bold text-ci">4</p>
+                                    <p class="text-sm font-sans mt-1 uppercase tracking-wide">Unit Banglo</p>
+                                    <p class="text-xs font-sans mt-2 text-secondary/70">Kemewahan setingkat dengan tanah luas, bahan mesra alam, dan sistem solar percuma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-start-1 col-end-13 md:col-start-9 md:col-end-13">
+                        <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-lg"
+                            src="IMAGES/POKOK SENA 42UNIT/BUNGALOW FRONT VIEW.png"
+                            alt="Banglo Setingkat - Pandangan Hadapan" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== REGISTRATION SECTION ===== -->
+    <section id="register" class="relative min-h-screen px-8 py-16 overflow-hidden bg-ci bg-texture-after lg:py-24 md:px-14 lg:px-0">
+        <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-8 max-w-7xl mx-auto">
+            <div class="lg:col-start-2 lg:col-end-7" id="hubungi">
+                <h2 class="mt-12 font-serif text-2xl md:text-4xl font-bold tracking-wider uppercase text-grain text-pretty">
+                    Miliki Rumah Hijau Anda Sekarang.
+                </h2>
+                <p class="mt-4 text-grain/80 font-sans text-base md:text-lg">Sistem solar bernilai RM17,000 PERCUMA untuk setiap unit. Tawaran terhad untuk 42 unit sahaja.</p>
+                <div class="mt-8">
+                    <span class="font-bold tracking-wider uppercase font-serif text-grain text-sm">Daftar Minat Anda</span>
+                </div>
+                <form id="registration-form" class="mt-12 text-sm md:mt-20 space-y-14 md:text-base font-sans" onsubmit="handleFormSubmit(event)">
+                    <div class="relative group">
+                        <label for="name" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">Nama*</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <label for="contactno" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">Nombor Telefon*</label>
+                        <input type="tel" name="contactno" id="contactno" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <label for="email" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">E-mel*</label>
+                        <input type="email" name="email" id="email" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <div class="flex gap-3">
+                            <input id="pdpa" name="pdpa" type="checkbox" required
+                                class="mt-1 border rounded-sm appearance-none size-4 shrink-0 border-grain/50 focus:ring-grain focus:ring-2 focus:ring-offset-2 focus:ring-offset-ci focus:outline-none cursor-pointer transition-all duration-300" />
+                            <label for="pdpa" class="text-xs font-medium text-grain cursor-pointer font-sans leading-relaxed">
+                                Saya dengan ini mengesahkan bahawa saya memahami dan menerima Dasar Privasi (PDPA) dan Terma dan Syarat penggunaan laman web. Saya dengan ini bersetuju dan memberi kebenaran kepada TLS Development Sdn Bhd untuk mengumpul data peribadi saya yang diberikan dalam borang ini bagi tujuan komunikasi mengenai produk dan perkhidmatan anda.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="inline-flex btn-primary accent-btn px-8 py-3 group tracking-wide uppercase text-sm rounded-md" type="submit">
+                            <span>Hantar</span>
+                        </button>
+                        <a class="btn-whatsapp" href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Taman%20Pokok%20Sena" target="_blank">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>WhatsApp Kami</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="hidden lg:flex lg:col-start-8 lg:col-end-13 flex-col justify-center items-center">
+                <div class="w-full max-w-sm opacity-10">
+                    <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="" class="w-full h-auto">
+                </div>
+                <div class="mt-12">
+                    <img loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-lg"
+                        src="IMAGES/POKOK SENA 42UNIT/suasana-family-dining-v2.png"
+                        alt="Suasana Taman Pokok Sena" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="relative border-t-2 bg-secondary bg-texture-after">
+        <div class="relative z-10 flex flex-col md:flex-row md:divide-x md:divide-grain/20">
+            <!-- Left column: Logo + Social -->
+            <div class="flex flex-col items-center px-8 py-8 space-y-8 md:px-16 xl:px-20 md:py-16 md:border-t md:border-grain/20 text-grain">
+                <div class="text-center">
+                    <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO ONLY (WHITE).svg" alt="Taman Pokok Sena" class="mx-auto h-16 md:h-20 w-auto" />
+                    <p class="text-xs mt-4 text-grain/60 font-sans">oleh TLS Development Sdn Bhd</p>
+                </div>
+                <div class="text-sm text-center font-sans">
+                    <p class="mb-4 text-sm tracking-wide uppercase">Ikuti Kami:</p>
+                    <div class="flex space-x-8 justify-center">
+                        <a href="https://wa.me/60134315114" target="_blank" class="block text-grain hover:text-accent transition-all duration-300 footer-link">
+                            <svg class="h-5 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: Info -->
+            <div class="flex flex-col items-center px-8 pt-4 pb-8 md:px-16 xl:px-20 md:pt-16 md:pb-12 grow gap-y-4 text-grain">
+                <div class="flex flex-col justify-between w-full text-center md:text-start lg:flex-row">
+                    <div class="mb-6 space-y-6 lg:mb-0">
+                        <h3 class="text-lg font-bold tracking-wider uppercase md:text-xl xl:text-2xl font-serif">
+                            MILIKI RUMAH IMPIAN<br>ANDA SEKARANG.
+                        </h3>
+                        <a class="btn-whatsapp inline-flex" href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Taman%20Pokok%20Sena" target="_blank">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>WhatsApp Kami</span>
+                        </a>
+                    </div>
+                    <div class="flex flex-col mb-2 space-y-2 text-sm lg:text-right md:mb-0 font-sans">
+                        <a class="mb-4 text-2xl tracking-wider md:text-3xl xl:text-5xl font-serif transition-all duration-300 hover:text-accent" href="tel:+60134315114">
+                            013-431 5114
+                        </a>
+                        <p class="text-grain/70">TLS Development Sdn Bhd</p>
+                        <p class="text-grain/70">Bandar Pokok Sena, Kedah</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-between mt-auto w-full lg:flex-row lg:gap-0 pt-8 border-t border-grain/20">
+                    <p class="mb-0 font-medium text-center text-2xs md:text-start text-grain/70 font-sans">
+                        &copy; 2026 TLS Development Sdn Bhd. <span class="inline-block">Hak Cipta Terpelihara.</span>
+                    </p>
+                </div>
+                <div class="text-[10px]/[14px] space-y-4 text-pretty text-grain/50 mt-4 font-sans">
+                    <p>
+                        Semua maklumat, spesifikasi dan pelan yang terkandung di sini mungkin tertakluk kepada variasi, pengubahsuaian, dan/atau pindaan oleh kami dan/atau pihak berkuasa yang berkaitan atau perunding/arkitek pemaju seperti yang diperlukan dan tidak boleh menjadi sebahagian daripada tawaran atau kontrak. Paparan, gambaran, dan ilustrasi adalah tanggapan artistik sahaja dan tidak boleh dianggap sebagai representasi fakta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON (MOBILE) ===== -->
+    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Taman%20Pokok%20Sena" target="_blank"
+        class="fixed bottom-6 left-6 z-50 lg:hidden bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#1da851] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <svg class="size-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ===== SCRIPTS ===== -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <script>
+        // ===== STICKY NAV SCROLL =====
+        (function() {
+            const stickyNav = document.getElementById('sticky-nav');
+            let lastScrollY = 0;
+            window.addEventListener('scroll', function() {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > 600) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+                lastScrollY = currentScrollY;
+            });
+        })();
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== FORM SUBMISSION -> WHATSAPP =====
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contactno').value;
+            const email = document.getElementById('email').value;
+            const pdpa = document.getElementById('pdpa').checked;
+
+            if (!name || !contact || !email) {
+                alert('Sila lengkapkan semua ruangan yang diperlukan.');
+                return;
+            }
+            if (!pdpa) {
+                alert('Sila bersetuju dengan Dasar Privasi (PDPA) untuk meneruskan.');
+                return;
+            }
+
+            const message = encodeURIComponent(
+                `Hi, saya berminat dengan projek Taman Pokok Sena.\n\nNama: ${name}\nNo. Telefon: ${contact}\nE-mel: ${email}`
+            );
+            window.open(`https://wa.me/60134315114?text=${message}`, '_blank');
+        }
+
+        // ===== SPLASH SCREEN AUTO-REMOVE =====
+        setTimeout(function() {
+            const splash = document.getElementById('splash');
+            if (splash) {
+                splash.style.pointerEvents = 'none';
+            }
+        }, 4200);
+    </script>
+
+</body>
+</html>
