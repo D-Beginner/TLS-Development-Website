@@ -1126,6 +1126,21 @@
             border-color: var(--color-gold-dark);
         }
 
+        /* Pokok Sena card — gold overlay on hover */
+        .upcoming-project-card:hover .pokok-sena-overlay {
+            background: rgba(201, 148, 62, 0.88) !important;
+        }
+        .upcoming-project-card:hover .pokok-sena-logo {
+            filter: brightness(0) invert(1);
+            transform: scale(1.05);
+        }
+        .upcoming-project-card:hover .pokok-sena-title {
+            color: white !important;
+        }
+        .upcoming-project-card:hover .pokok-sena-desc {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
         /* Logo area — full width, contained, light bg */
         .upcoming-project-card > img {
             width: 100% !important;
@@ -1635,6 +1650,7 @@
                     </div>
                 </a>
 
+
             </div>
         </div>
     </section>
@@ -1649,16 +1665,16 @@
             </div>
 
             <div class="upcoming-projects-grid" vid="upcoming-grid">
-                <!-- Card 1: Pokok Sena -->
-                <div class="upcoming-project-card" vid="upcoming-card-1">
-                    <img src="LOGO/logo-pokok-sena.svg" alt="Pokok Sena" vid="upcoming-img-1">
-                    <div class="upcoming-card-body">
-                        <div class="upcoming-project-badge" vid="upcoming-badge-1">Coming Soon</div>
-                        <h4 vid="upcoming-title-1">Pokok Sena</h4>
-                        <p vid="upcoming-desc-1">42 Units &nbsp;·&nbsp; Freehold<br>Terrace, Semi-D &amp; Bungalow<br>Bandar Pokok Sena, Kedah</p>
+                <!-- Card 1: Taman Pokok Sena (clickable card with background image) -->
+                <a href="pokok-sena.html" class="upcoming-project-card" style="text-decoration: none; padding: 0; position: relative; overflow: hidden;" vid="upcoming-card-1">
+                    <div style="position: absolute; inset: 0; background-image: url('IMAGES/POKOK SENA 42UNIT/SEMID D FRONT VIEW.png'); background-size: cover; background-position: center;"></div>
+                    <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.78); transition: background 0.4s ease;" class="pokok-sena-overlay"></div>
+                    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 28px 20px;">
+                        <img src="IMAGES/POKOK SENA 42UNIT/POKOK SENA LOGO (BLACK NO BACKGROUND).svg" alt="Taman Pokok Sena" style="max-width: 180px; width: 50%; margin-bottom: 20px; transition: filter 0.4s ease, transform 0.4s ease;" class="pokok-sena-logo">
+                        <h4 style="margin-bottom: 8px; transition: color 0.4s ease;" class="pokok-sena-title">Taman Pokok Sena</h4>
+                        <p vid="upcoming-desc-1" style="transition: color 0.4s ease;" class="pokok-sena-desc">42 Units &nbsp;·&nbsp; Freehold<br>Terrace, Semi-D &amp; Bungalow<br>Bandar Pokok Sena, Kedah</p>
                     </div>
-                    <a href="https://wa.me/60134315114?text=Hi%20saya%20berminat%20dengan%20projek%20Pokok%20Sena" class="upcoming-project-link" target="_blank" vid="upcoming-link-1">📩 Register Interest</a>
-                </div>
+                </a>
 
                 <!-- Card 2: Taman Hijirah Jejawi -->
                 <div class="upcoming-project-card" vid="upcoming-card-2">
