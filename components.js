@@ -89,6 +89,15 @@
                 <span class="nav-dropdown-item-location">Alor Setar, Kedah</span>
               </div>
             </a>
+            <a href="arunika-residency.html" class="nav-dropdown-item">
+              <div class="nav-dropdown-item-icon">
+                <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi">
+              </div>
+              <div class="nav-dropdown-item-text">
+                <span class="nav-dropdown-item-name">Arunika Residency</span>
+                <span class="nav-dropdown-item-location">Changlun, Kedah</span>
+              </div>
+            </a>
             <div class="nav-dropdown-divider"></div>
             <a href="${href('#projects')}" class="nav-dropdown-footer">View All Projects →</a>
           </div>
@@ -120,6 +129,13 @@
           <div>
             <div style="color:white;font-size:0.95rem;font-weight:600;">Taman Rotan Indah</div>
             <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">Alor Setar, Kedah</div>
+          </div>
+        </a>
+        <a href="arunika-residency.html" class="mobile-menu-project-item">
+          <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi">
+          <div>
+            <div style="color:white;font-size:0.95rem;font-weight:600;">Arunika Residency</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;">Changlun, Kedah</div>
           </div>
         </a>
       </div>
@@ -184,6 +200,7 @@
             <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;font-size:0.9rem;">
               <li style="font-weight:600;color:var(--color-text-main);margin-bottom:4px;">Now Selling</li>
               <li><a href="taman-rotan-indah.html" style="color:var(--color-text-muted);transition:color 0.2s;">Taman Rotan Indah (28 Units)</a></li>
+              <li><a href="arunika-residency.html" style="color:var(--color-text-muted);transition:color 0.2s;">Arunika Residency (76 Units)</a></li>
               <li style="font-weight:600;color:var(--color-text-main);margin-top:16px;margin-bottom:4px;">Upcoming</li>
               <li><a href="${href('#projects')}" style="color:var(--color-text-muted);transition:color 0.2s;">Pokok Sena</a></li>
               <li><a href="${href('#projects')}" style="color:var(--color-text-muted);transition:color 0.2s;">Taman Hijirah Jejawi</a></li>

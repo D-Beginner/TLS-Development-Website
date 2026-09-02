@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Arunika Residency — Kediaman Freehold di Changlun, Kedah</title>
+    <meta itemprop="name" content="Arunika Residency" />
+    <meta itemprop="description"
+        content="Kediaman freehold setingkat di Changlun, Kedah. 76 unit rumah berkembar dan teres oleh TLS Development Sdn Bhd. Bermula dari RM288,000." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Arunika Residency | TLS Development" />
+    <meta name="twitter:description"
+        content="76 unit kediaman freehold setingkat di Changlun, Kedah. Rumah teres dari RM288,000 dan rumah berkembar dari RM388,000." />
+    <meta property="og:locale" content="ms_MY" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Arunika Residency | TLS Development" />
+    <meta property="og:site_name" content="Arunika Residency" />
+    <meta property="og:description"
+        content="76 unit kediaman freehold setingkat di Changlun, Kedah. Rumah teres dari RM288,000 dan rumah berkembar dari RM388,000." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="TLS Development Sdn Bhd" />
+    <meta name="copyright" content="TLS Development Sdn Bhd" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1C3545',
+                        secondary: '#2D4F5E',
+                        tertiary: '#1C2D3A',
+                        ci: '#C9943E',
+                        grain: '#FAF8F5',
+                        accent: '#C9943E',
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Josefin Sans', 'sans-serif'],
+                    },
+                    fontSize: {
+                        '2xs': ['0.625rem', { lineHeight: '0.875rem' }],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+    </style>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            --nav-height: 100px;
+            --color-teal: #2D4F5E;
+            --color-gold: #C9943E;
+            --color-gold-dark: #A87830;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            color: #1C2D3A;
+            background: #FAF8F5;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .font-serif { font-family: 'Cinzel', serif; }
+
+        .z-above { z-index: 20; }
+
+        .bg-texture-after { position: relative; }
+        .bg-texture-after::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='6' seed='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.15'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+            background-size: 512px 512px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Liquid Glass nav */
+        .liquid-glass {
+            background: rgba(28, 53, 69, 0.35);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+        .liquid-glass-sticky {
+            background: rgba(28, 53, 69, 0.85);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        /* btn-primary */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            border-radius: 0.375rem;
+        }
+        .btn-primary:not(.grain):not(.secondary):not(.outline) {
+            background-color: #FAF8F5;
+            color: #1C3545;
+        }
+        .btn-primary:not(.grain):not(.secondary):not(.outline):hover {
+            background-color: #C9943E;
+            color: #FAF8F5;
+        }
+        .btn-primary.secondary {
+            background-color: #2D4F5E;
+            color: #FAF8F5;
+        }
+        .btn-primary.secondary:hover {
+            background-color: #1C3545;
+            color: #FAF8F5;
+        }
+        .btn-primary.accent-btn {
+            background-color: #C9943E;
+            color: #FAF8F5;
+        }
+        .btn-primary.accent-btn:hover {
+            background-color: #A87830;
+            color: #FAF8F5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Splash screen */
+        #splash {
+            animation: splashFadeOut 0.6s ease-in-out 3s forwards;
+        }
+        @keyframes splashFadeOut {
+            0% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+        }
+        .animate-fade-in-delay {
+            animation: fadeIn 1.5s ease-out 1.2s forwards;
+        }
+
+        /* Swiper custom */
+        swiper-container::part(pagination) {
+            position: relative;
+            bottom: 0;
+            margin-top: 1rem;
+        }
+        swiper-container::part(bullet) {
+            background: #2D4F5E;
+            opacity: 0.3;
+        }
+        swiper-container::part(bullet-active) {
+            background: #2D4F5E;
+            opacity: 1;
+        }
+
+        /* Placeholder images */
+        .img-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2D4F5E 0%, #1C3545 50%, #1C2D3A 100%);
+            color: #FAF8F5;
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 2rem;
+            min-height: 200px;
+        }
+
+        /* Nav link hover */
+        .nav-link-hover {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #FAF8F5;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Footer link hover */
+        .footer-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C9943E;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .footer-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Card hover */
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        /* WhatsApp button */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background-color: #25D366;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Mobile menu */
+        .menu-opened { overflow: hidden; }
+        .menu-opened .mobile-menu { opacity: 1; visibility: visible; transform: scale(1); }
+        .menu-opened .hamburger-open { display: none; }
+        .menu-opened .hamburger-close { display: block; }
+
+        /* Sticky nav */
+        #sticky-nav.visible {
+            transform: translateY(0) !important;
+        }
+
+        /* Hero placeholder */
+        .hero-placeholder {
+            background: linear-gradient(135deg, #1C3545 0%, #2D4F5E 40%, #C9943E 100%);
+            min-height: 100vh;
+        }
+
+        /* Form input focus */
+        #registration-form input:focus {
+            border-color: #C9943E !important;
+            outline: none;
+        }
+
+        /* Checkbox styling */
+        input[type="checkbox"]:checked {
+            background-color: #FAF8F5;
+            border-color: #FAF8F5;
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%231C3545' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Hero image aspect ratio */
+        .hero-image-wrapper {
+            aspect-ratio: 1.5 / 1;
+        }
+        @media (min-width: 768px) {
+            .hero-image-wrapper {
+                aspect-ratio: 2.2 / 1;
+            }
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- ===== MAIN NAV ===== -->
+    <nav id="main-nav" class="absolute top-0 left-0 z-above w-full py-4 md:py-6 liquid-glass">
+        <div class="container mx-auto px-4 md:px-8 flex items-center justify-between max-w-full">
+            <a class="flex items-center gap-3" href="#">
+                <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi" class="h-20 md:h-24 w-auto" style="max-width: 220px;" />
+            </a>
+            <div class="justify-center hidden text-sm lg:flex gap-10 xl:gap-14 text-grain/50 font-sans tracking-wide">
+                <a class="nav-link-hover hover:text-white" href="#kediaman">Kediaman</a>
+                <a class="nav-link-hover hover:text-white" href="#lokasi">Lokasi</a>
+                <a class="nav-link-hover hover:text-white" href="#galeri">Galeri</a>
+                <a class="nav-link-hover hover:text-white" href="#hubungi">Hubungi Kami</a>
+            </div>
+            <div class="flex justify-end items-center space-x-4">
+                <a class="hidden text-xs lg:inline-flex btn-primary grain whitespace-nowrap tracking-wide uppercase" href="#register">
+                    Daftar Sekarang
+                </a>
+                <button class="block p-2 border rounded-full lg:hidden border-grain transition-all duration-300" aria-label="menu" onclick="document.body.classList.toggle('menu-opened')">
+                    <svg class="hamburger-open size-6" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2 6H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M2 10H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                        <path d="M2 14H18" stroke="#FAF8F5" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg>
+                    <svg class="hamburger-close hidden size-6" width="20" height="20" fill="none" stroke="#FAF8F5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== STICKY NAV ===== -->
+    <nav id="sticky-nav" class="fixed top-0 left-0 z-[90] w-full py-4 md:py-5 liquid-glass-sticky transition-all duration-300 -translate-y-full">
+        <div class="container mx-auto px-4 md:px-8 flex items-center justify-between max-w-full">
+            <a class="flex items-center gap-2" href="#">
+                <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi" class="h-12 md:h-14 w-auto" style="max-width: 140px;" />
+            </a>
+            <div class="justify-center hidden text-sm lg:flex gap-10 xl:gap-14 text-grain/50 font-sans tracking-wide">
+                <a class="nav-link-hover hover:text-white" href="#kediaman">Kediaman</a>
+                <a class="nav-link-hover hover:text-white" href="#lokasi">Lokasi</a>
+                <a class="nav-link-hover hover:text-white" href="#galeri">Galeri</a>
+                <a class="nav-link-hover hover:text-white" href="#hubungi">Hubungi Kami</a>
+            </div>
+            <div class="flex justify-end items-center space-x-4">
+                <a class="hidden text-xs lg:inline-flex btn-primary grain whitespace-nowrap tracking-wide uppercase" href="#register">
+                    Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU OVERLAY ===== -->
+    <div class="mobile-menu fixed inset-0 w-full h-full z-[80] bg-primary flex items-center transition-all opacity-0 invisible scale-50 duration-300 pt-[100px]">
+        <div class="flex flex-col mx-auto mb-8 space-y-8 text-center text-white w-max font-sans">
+            <div class="flex flex-col items-center w-full space-y-8">
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#kediaman" onclick="document.body.classList.remove('menu-opened')">Kediaman</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#lokasi" onclick="document.body.classList.remove('menu-opened')">Lokasi</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#galeri" onclick="document.body.classList.remove('menu-opened')">Galeri</a>
+                <a class="text-lg tracking-wide transition-colors duration-300 hover:text-accent" href="#hubungi" onclick="document.body.classList.remove('menu-opened')">Hubungi Kami</a>
+            </div>
+            <a class="inline-flex px-8 py-4 text-sm tracking-wide uppercase transition-colors duration-300 bg-grain text-primary rounded-md" href="#register" onclick="document.body.classList.remove('menu-opened')">
+                Daftar Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== CALL US SIDEBAR ===== -->
+    <a id="btn-call-us"
+        class="fixed bottom-0 right-0 z-20 flex justify-center items-center gap-8 px-4 md:px-14 py-[5px] md:py-5 text-base leading-none tracking-widest uppercase origin-bottom-right -rotate-90 -translate-y-[250px] md:-translate-y-[340px] bg-grain text-primary w-[250px] md:w-[340px] hover:bg-accent hover:text-grain transition-all duration-300"
+        href="tel:+60122848211">
+        <span class="font-sans">Hubungi Kami</span>
+        <svg class="rotate-90 size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="btn-back-to-top"
+        class="size-[30px] md:size-[60px] fixed bottom-[250px] md:bottom-[340px] right-0 z-20 bg-secondary hover:bg-primary transition-all duration-300 flex justify-center items-center"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg class="text-grain size-5 md:size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- ===== SPLASH SCREEN ===== -->
+    <section id="splash" class="fixed top-0 left-0 z-[100] w-full h-screen bg-primary flex items-center justify-center">
+        <div class="flex flex-col items-center justify-center">
+            <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi" class="h-24 md:h-32 w-auto opacity-0 animate-fade-in rounded-xl">
+            <h2 class="text-grain font-serif text-2xl md:text-3xl tracking-[0.3em] uppercase mt-8 opacity-0 animate-fade-in-delay">Arunika Residensi</h2>
+        </div>
+    </section>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-placeholder h-screen min-h-[600px] max-h-[900px] overflow-hidden bg-texture-after pt-[100px] relative z-10">
+        <div class="h-full flex flex-col md:grid md:grid-cols-12 justify-center">
+            <div class="relative flex items-end order-1 md:col-span-8 md:col-start-5 overflow-hidden md:order-2">
+                <div class="w-full h-full relative">
+                    <img src="IMAGES/ARUNIKA RESIDENCY/semi-d-render.png" alt="Arunika Residensi — Rumah Berkembar Setingkat" class="absolute inset-0 object-cover w-full h-full" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+                </div>
+            </div>
+            <!-- Text overlay -->
+            <div class="absolute z-20 flex flex-col justify-center inset-0 pt-[100px] px-8 md:px-0" style="padding-left: max(2rem, 8vw);">
+                <h2 class="font-serif font-bold text-4xl md:text-6xl lg:text-7xl text-grain uppercase leading-none tracking-wider drop-shadow-lg" style="max-width: 38.2vw;">
+                    Selesa. Serasi. Sempurna.
+                </h2>
+                <a id="btn-scroll-explore" class="mt-12 md:mt-24 whitespace-nowrap transition-all duration-300" href="#intro">
+                    <span class="relative block text-sm font-sans tracking-wide uppercase text-grain drop-shadow-md">Terokai Lagi</span>
+                    <svg class="mt-6" style="width:60px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 30" fill="none">
+                        <path d="M0 15c20-10 40 10 60 0s40 10 60 0" stroke="#FAF8F5" stroke-width="2" fill="none">
+                            <animate attributeName="d" dur="2s" repeatCount="indefinite"
+                                values="M0 15c20-10 40 10 60 0s40 10 60 0;M0 15c20 10 40-10 60 0s40-10 60 0;M0 15c20-10 40 10 60 0s40 10 60 0"/>
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTRODUCTION SECTION ===== -->
+    <section id="intro" class="relative bg-grain">
+        <div class="py-16 lg:py-24 relative">
+            <div class="container max-w-3xl mx-auto space-y-12 text-balance px-6">
+                <div class="text-center">
+                    <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi" class="inline-block h-16 md:h-20 w-auto opacity-20">
+                </div>
+                <div class="space-y-8 text-center text-secondary">
+                    <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider font-bold">
+                        Kediaman Impian di Changlun
+                    </h2>
+                    <p class="text-base md:text-lg font-sans leading-relaxed">
+                        <strong>Arunika Residency</strong> merupakan projek kediaman freehold terbaru oleh <strong>TLS Development</strong> di Changlun, Kedah. 76 unit rumah setingkat — teres dan berkembar — direka untuk keluarga yang menginginkan keselesaan dan ruang yang luas. Bermula dari RM288,000 sahaja, dibangunkan oleh pembina berpengalaman lebih 30 tahun dengan lebih 2,800 unit rumah yang telah siap dibina.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY HIGHLIGHTS ===== -->
+    <div class="bg-secondary/10 py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-secondary">76</div>
+                    <div class="text-sm text-secondary mt-1">Unit Kediaman</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-secondary">100%</div>
+                    <div class="text-sm text-secondary mt-1">Freehold / Hak Milik Kekal</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-secondary">RM288K</div>
+                    <div class="text-sm text-secondary mt-1">Bermula Dari</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-serif font-bold text-secondary">30+</div>
+                    <div class="text-sm text-secondary mt-1">Tahun Pengalaman Pembina</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT SECTIONS ===== -->
+    <div class="py-16 space-y-16 lg:space-y-24 lg:py-24">
+
+        <!-- === LOCATION SECTION === -->
+        <section id="lokasi" class="space-y-16">
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-start-1 col-end-13 md:col-end-8 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Lokasi Strategik di Changlun, Kedah
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                Terletak di <strong>Lot 2329, Mukim Temin, Kubang Pasu, Kedah</strong>, <strong>Arunika Residency</strong> menawarkan kehidupan yang tenang namun strategik. Berdekatan dengan pekan Changlun dan Lebuhraya Utara-Selatan, lokasi ini memberikan akses mudah ke sekolah, pasar, bank, dan kemudahan awam tanpa mengorbankan ketenangan persekitaran.
+                            </p>
+                            <div class="w-full aspect-video rounded-lg overflow-hidden">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5!2d100.4604672!3d6.448488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304caf952ff27019%3A0x66c1866734768bcd!2sTAMAN%20SEMARAK%20API%20no%2022!5e0!3m2!1sms!2smy!4v1725264000000"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === PROPERTY OVERVIEW SECTION === -->
+        <section class="space-y-16">
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12 gap-8 items-center">
+                    <div class="col-start-1 col-end-13 md:col-start-1 md:col-end-5">
+                        <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-lg"
+                            src="IMAGES/ARUNIKA RESIDENCY/terrace-render.png"
+                            alt="Rumah Teres Setingkat — Arunika Residensi" />
+                    </div>
+                    <div class="col-start-1 col-end-13 md:col-start-6 md:col-end-13 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Rumah Setingkat untuk Keselesaan Keluarga
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed">
+                                <strong>Arunika Residency</strong> menawarkan 76 unit kediaman setingkat — 54 unit rumah teres dan 22 unit rumah berkembar — direka dengan ruang yang luas dan susun atur praktikal untuk kehidupan keluarga moden. Semua unit adalah freehold (hak milik kekal).
+                            </p>
+                            <div class="flex flex-wrap gap-4 mt-4 text-sm font-sans">
+                                <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    Freehold 100%
+                                </span>
+                                <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                    76 Unit Sahaja
+                                </span>
+                                <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full font-medium">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                    Setingkat — Tanpa Tangga
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === GALLERY / PROPERTY IMAGES SECTION (SWIPER) === -->
+        <section id="kediaman" class="space-y-16">
+            <div id="galeri" class="relative">
+                <div class="container mx-auto px-4 md:px-0">
+                    <swiper-container pagination="true" pagination-clickable="true"
+                        autoplay='{"delay": 5000, "disableOnInteraction": false}'
+                        speed="800" loop="true" slides-per-view="1">
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/ARUNIKA RESIDENCY/semi-d-render.png"
+                                    alt="Rumah Berkembar Setingkat — Arunika Residensi" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans drop-shadow-lg">Rumah Berkembar Setingkat — 22 Unit | Dari RM388,000</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/ARUNIKA RESIDENCY/terrace-render.png"
+                                    alt="Rumah Teres Setingkat — Arunika Residensi" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-grain font-sans drop-shadow-lg">Rumah Teres Setingkat — 54 Unit | Dari RM288,000</small>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="relative">
+                                <img loading="lazy" decoding="async" class="w-full h-auto max-w-full rounded-lg object-cover"
+                                    src="IMAGES/ARUNIKA RESIDENCY/site-plan.jpeg"
+                                    alt="Pelan Tapak Arunika Residensi — 76 Unit" />
+                                <small class="absolute bottom-0 left-0 p-2 md:p-4 font-medium text-secondary font-sans">Pelan Tapak — 76 Unit Kediaman Freehold</small>
+                            </div>
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+
+            <!-- === PRICING CARDS === -->
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-start-1 col-end-13 md:col-start-2 md:col-end-12 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold text-center">
+                            Pilihan Kediaman Anda
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12 mx-auto" />
+                        <div class="space-y-8">
+                            <p class="text-base md:text-lg font-sans leading-relaxed text-center max-w-2xl mx-auto">
+                                Dua jenis kediaman setingkat direka khas untuk keselesaan — ruang yang luas, tanah freehold, dan harga bermula dari RM288,000.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                                <!-- Teres Card -->
+                                <div class="text-center p-8 bg-secondary/5 rounded-xl card-hover">
+                                    <p class="text-xs font-sans uppercase tracking-widest text-secondary/60">Rumah Teres Setingkat</p>
+                                    <p class="font-serif text-xl md:text-2xl font-bold text-ci mt-3">54 Unit · Plot 23–76</p>
+                                    <p class="font-serif text-2xl md:text-3xl font-bold text-secondary mt-4">Dari RM288,000</p>
+                                    <div class="mt-6 space-y-2 text-sm font-sans text-secondary/80">
+                                        <p><strong>Luas Binaan:</strong> 20′ × 45′ (900 kaki²)</p>
+                                        <p><strong>Luas Tanah:</strong> Bermula dari 20′ × 70′ (1,400 kaki²)</p>
+                                        <p><strong>Status:</strong> Freehold</p>
+                                    </div>
+                                    <a class="inline-flex mt-6 text-xs btn-primary secondary whitespace-nowrap tracking-wide uppercase" href="#register">
+                                        Daftar Minat
+                                    </a>
+                                </div>
+                                <!-- Semi-D Card -->
+                                <div class="text-center p-8 bg-secondary/5 rounded-xl card-hover">
+                                    <p class="text-xs font-sans uppercase tracking-widest text-secondary/60">Rumah Berkembar Setingkat</p>
+                                    <p class="font-serif text-xl md:text-2xl font-bold text-ci mt-3">22 Unit · Plot 1–22</p>
+                                    <p class="font-serif text-2xl md:text-3xl font-bold text-secondary mt-4">Dari RM388,000</p>
+                                    <div class="mt-6 space-y-2 text-sm font-sans text-secondary/80">
+                                        <p><strong>Luas Binaan:</strong> 22′ × 46′ (1,012 kaki²)</p>
+                                        <p><strong>Luas Tanah:</strong> Bermula dari 22′ × 118.2′ (2,600 kaki²)</p>
+                                        <p><strong>Status:</strong> Freehold</p>
+                                    </div>
+                                    <a class="inline-flex mt-6 text-xs btn-primary secondary whitespace-nowrap tracking-wide uppercase" href="#register">
+                                        Daftar Minat
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === FLOOR PLAN SECTION === -->
+        <section class="space-y-16">
+            <div class="container mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-12">
+                    <div class="col-start-1 col-end-13 md:col-start-6 text-secondary">
+                        <h2 class="font-serif text-2xl md:text-4xl uppercase tracking-wider text-balance font-bold">
+                            Pelan Lantai
+                        </h2>
+                        <hr class="w-[166px] border-secondary/20 mt-8 mb-12" />
+                        <p class="text-base md:text-lg font-sans leading-relaxed mb-8">
+                            Susun atur praktikal yang memaksimumkan setiap ruang — ruang tamu, dapur, bilik tidur, dan bilik air direka untuk aliran kehidupan harian yang lancar.
+                        </p>
+                    </div>
+                </div>
+                <!-- PLACEHOLDER: Floor plan images -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="img-placeholder w-full aspect-[4/3] rounded-lg">
+                        <div class="text-center">
+                            <svg class="w-12 h-12 mx-auto mb-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                            <p class="text-sm opacity-70">PELAN LANTAI — TERES SETINGKAT</p>
+                            <p class="text-xs opacity-50 mt-1">20′ × 45′ binaan</p>
+                        </div>
+                    </div>
+                    <div class="img-placeholder w-full aspect-[4/3] rounded-lg">
+                        <div class="text-center">
+                            <svg class="w-12 h-12 mx-auto mb-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                            <p class="text-sm opacity-70">PELAN LANTAI — BERKEMBAR SETINGKAT</p>
+                            <p class="text-xs opacity-50 mt-1">22′ × 46′ binaan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== REGISTRATION SECTION ===== -->
+    <section id="register" class="relative min-h-screen px-8 py-16 overflow-hidden bg-primary bg-texture-after lg:py-24 md:px-14 lg:px-0">
+        <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-8 max-w-7xl mx-auto">
+            <div class="lg:col-start-2 lg:col-end-7" id="hubungi">
+                <h2 class="mt-12 font-serif text-2xl md:text-4xl font-bold tracking-wider uppercase text-grain text-pretty">
+                    Miliki Rumah Impian Anda di Changlun.
+                </h2>
+                <p class="mt-4 text-grain/80 font-sans text-base md:text-lg">76 unit kediaman freehold setingkat — bermula dari RM288,000. Tempahan dibuka.</p>
+                <div class="mt-8">
+                    <span class="font-bold tracking-wider uppercase font-serif text-grain text-sm">Daftar Minat Anda</span>
+                </div>
+                <form id="registration-form" class="mt-12 text-sm md:mt-20 space-y-14 md:text-base font-sans" onsubmit="handleFormSubmit(event)">
+                    <div class="relative group">
+                        <label for="name" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">Nama*</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <label for="contactno" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">Nombor Telefon*</label>
+                        <input type="tel" name="contactno" id="contactno" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <label for="email" class="block text-grain/50 text-sm font-sans tracking-wide uppercase">E-mel*</label>
+                        <input type="email" name="email" id="email" required
+                            class="w-full py-4 bg-transparent border-b rounded-none text-grain border-grain/50 focus-within:outline-none transition-all duration-300" />
+                    </div>
+                    <div class="relative group">
+                        <div class="flex gap-3">
+                            <input id="pdpa" name="pdpa" type="checkbox" required
+                                class="mt-1 border rounded-sm appearance-none size-4 shrink-0 border-grain/50 focus:ring-grain focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary focus:outline-none cursor-pointer transition-all duration-300" />
+                            <label for="pdpa" class="text-xs font-medium text-grain cursor-pointer font-sans leading-relaxed">
+                                Saya dengan ini mengesahkan bahawa saya memahami dan menerima Dasar Privasi (PDPA) dan Terma dan Syarat penggunaan laman web. Saya dengan ini bersetuju dan memberi kebenaran kepada TLS Development Sdn Bhd untuk mengumpul data peribadi saya yang diberikan dalam borang ini bagi tujuan komunikasi mengenai produk dan perkhidmatan anda.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="inline-flex btn-primary accent-btn px-8 py-3 group tracking-wide uppercase text-sm rounded-md" type="submit">
+                            <span>Hantar</span>
+                        </button>
+                        <a class="btn-whatsapp" href="https://wa.me/60122848211?text=Hi%20saya%20berminat%20dengan%20Arunika%20Residency%20Changlun" target="_blank">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>WhatsApp Kami</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <div class="hidden lg:flex lg:col-start-8 lg:col-end-13 flex-col justify-center items-center">
+                <div class="w-full max-w-sm opacity-20">
+                    <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="" class="w-full h-auto">
+                </div>
+                <div class="mt-12">
+                    <img loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-lg"
+                        src="IMAGES/ARUNIKA RESIDENCY/semi-d-render.png"
+                        alt="Arunika Residensi" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="relative border-t-2 bg-primary bg-texture-after">
+        <div class="relative z-10 flex flex-col md:flex-row md:divide-x md:divide-grain/20">
+            <!-- Left column: Logo + Social -->
+            <div class="flex flex-col items-center px-8 py-8 space-y-8 md:px-16 xl:px-20 md:py-16 md:border-t md:border-grain/20 text-grain">
+                <div class="text-center">
+                    <img src="IMAGES/ARUNIKA RESIDENCY/logo.png" alt="Arunika Residensi" class="mx-auto h-16 md:h-20 w-auto" />
+                    <p class="text-xs mt-4 text-grain/60 font-sans">TLS Development Sdn Bhd</p>
+                </div>
+                <div class="text-sm text-center font-sans">
+                    <p class="mb-4 text-sm tracking-wide uppercase">Ikuti Kami:</p>
+                    <div class="flex space-x-8 justify-center">
+                        <a href="https://wa.me/60122848211" target="_blank" class="block text-grain hover:text-accent transition-all duration-300 footer-link">
+                            <svg class="h-5 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/tlsdevelopment" target="_blank" class="block text-grain hover:text-accent transition-all duration-300 footer-link">
+                            <svg class="h-5 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: Info -->
+            <div class="flex flex-col items-center px-8 pt-4 pb-8 md:px-16 xl:px-20 md:pt-16 md:pb-12 grow gap-y-4 text-grain">
+                <div class="flex flex-col justify-between w-full text-center md:text-start lg:flex-row">
+                    <div class="mb-6 space-y-6 lg:mb-0">
+                        <h3 class="text-lg font-bold tracking-wider uppercase md:text-xl xl:text-2xl font-serif">
+                            MILIKI RUMAH IMPIAN<br>ANDA SEKARANG.
+                        </h3>
+                        <a class="btn-whatsapp inline-flex" href="https://wa.me/60122848211?text=Hi%20saya%20berminat%20dengan%20Arunika%20Residency%20Changlun" target="_blank">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span>WhatsApp Kami</span>
+                        </a>
+                    </div>
+                    <div class="flex flex-col mb-2 space-y-2 text-sm lg:text-right md:mb-0 font-sans">
+                        <a class="mb-4 text-2xl tracking-wider md:text-3xl xl:text-5xl font-serif transition-all duration-300 hover:text-accent" href="tel:+60122848211">
+                            012-284 8211
+                        </a>
+                        <p class="text-grain/70">TLS Development Sdn Bhd</p>
+                        <p class="text-grain/70">Changlun, Kedah</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-between mt-auto w-full lg:flex-row lg:gap-0 pt-8 border-t border-grain/20">
+                    <p class="mb-0 font-medium text-center text-2xs md:text-start text-grain/70 font-sans">
+                        &copy; 2026 TLS Development Sdn Bhd. <span class="inline-block">Hak Cipta Terpelihara.</span>
+                    </p>
+                    <a href="index.html" class="text-center text-2xs text-grain/50 hover:text-accent transition-colors font-sans">← Kembali ke TLS Development</a>
+                </div>
+                <div class="text-[10px]/[14px] space-y-4 text-pretty text-grain/50 mt-4 font-sans">
+                    <p>
+                        Semua maklumat, spesifikasi dan pelan yang terkandung di sini mungkin tertakluk kepada variasi, pengubahsuaian, dan/atau pindaan oleh kami dan/atau pihak berkuasa yang berkaitan atau perunding/arkitek pemaju seperti yang diperlukan dan tidak boleh menjadi sebahagian daripada tawaran atau kontrak. Paparan, gambaran, dan ilustrasi adalah tanggapan artistik sahaja dan tidak boleh dianggap sebagai representasi fakta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON (MOBILE) ===== -->
+    <a href="https://wa.me/60122848211?text=Hi%20saya%20berminat%20dengan%20Arunika%20Residency%20Changlun" target="_blank"
+        class="fixed bottom-6 left-6 z-50 lg:hidden bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#1da851] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <svg class="size-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <script>
+        // Sticky nav scroll
+        (function() {
+            const stickyNav = document.getElementById('sticky-nav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 600) {
+                    stickyNav.classList.add('visible');
+                } else {
+                    stickyNav.classList.remove('visible');
+                }
+            });
+        })();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission -> WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contactno').value;
+            const email = document.getElementById('email').value;
+            const pdpa = document.getElementById('pdpa').checked;
+
+            if (!name || !contact || !email) {
+                alert('Sila lengkapkan semua ruangan yang diperlukan.');
+                return;
+            }
+            if (!pdpa) {
+                alert('Sila bersetuju dengan Dasar Privasi (PDPA) untuk meneruskan.');
+                return;
+            }
+
+            const message = encodeURIComponent(
+                `Hi, saya berminat dengan Arunika Residency Changlun.\n\nNama: ${name}\nNo. Telefon: ${contact}\nE-mel: ${email}`
+            );
+            window.open(`https://wa.me/60122848211?text=${message}`, '_blank');
+        }
+
+        // Splash screen auto-remove
+        setTimeout(function() {
+            const splash = document.getElementById('splash');
+            if (splash) splash.style.pointerEvents = 'none';
+        }, 3600);
+    </script>
+
+</body>
+</html>
